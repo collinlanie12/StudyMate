@@ -1,3 +1,5 @@
+const user = require("./user");
+
 module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("post",
         {
@@ -16,10 +18,7 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Post.associate = models => {
-        Post.belongsTo(models.user, {
-            foreignKey: 'post_name',
-            sourceKey: 'username'
-        });
+        Post.belongsTo(models.user);
         Post.belongsTo(models.subject);
     };
 

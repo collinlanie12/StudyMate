@@ -31,9 +31,9 @@ VALUES
     ('bigexample@bigexample.com', 'bigexampleMan', 'rootroot', 1, 1, 3, 'I am the bigexample guy', now(), now());
 
 INSERT INTO posts
-    (content, title, subjectId, time, createdAt, updatedAt)
+    (content, title, userId, subjectId, time, createdAt, updatedAt)
 VALUES
-    ("Looking for a Study group", "Music Study Group", 1, now(), now(), now());
+    ("Looking for a Study group", "Music Study Group", 1, 1, now(), now(), now());
 
 INSERT INTO user_subject
     (userId, subjectId, createdAt, updatedAt)
