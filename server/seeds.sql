@@ -59,3 +59,7 @@ INSERT INTO user_subject
     (userId, subjectId, createdAt, updatedAt)
 VALUES
     (4, 3, now(), now());
+
+INSERT INTO Secrets
+    (message, createdAt, updatedAt)
+VALUES('The clock rings twice on midnight when the moon is full.', now(), now());
