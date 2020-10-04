@@ -1,3 +1,5 @@
+const user = require("./user");
+
 module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("post",
         {
@@ -7,6 +9,10 @@ module.exports = function (sequelize, DataTypes) {
             },
             title: {
                 type: DataTypes.STRING,
+                allowNull: false
+            },
+            time: {
+                type: DataTypes.DATE,
                 allowNull: false
             }
         });
