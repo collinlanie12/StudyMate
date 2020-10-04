@@ -7,7 +7,7 @@ export default {
     },
 
     create: function (email, password) {
-      return axios.post('/api/users', { email, password });
+      return axios.post('/api/users/', { email, password });
     },
 
     getMe: function (authToken) {
