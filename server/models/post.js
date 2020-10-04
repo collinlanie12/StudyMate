@@ -12,8 +12,8 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Post.associate = models => {
-        Post.belongsTo(models.User);
-        Post.belongsTo(models.Subject);
+        Post.belongsTo(models.user);
+        Post.belongsTo(models.subject);
     };
 
     return Post;

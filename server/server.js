@@ -46,8 +46,19 @@ app.get('*', (req, res) => {
 });
 
 //-- Main --------------------------------------------------------------------
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on port ${PORT}...`);
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server listening on port ${PORT}...`);
+// });
+const db = require("./models");
+
+db.sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
 
 //-- Export to Tests ---------------------------------------------------------
