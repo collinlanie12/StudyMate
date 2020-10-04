@@ -8,11 +8,18 @@ module.exports = function (sequelize, DataTypes) {
             title: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            time: {
+                type: DataTypes.DATE,
+                allowNull: false
             }
         });
 
     Post.associate = models => {
-        Post.belongsTo(models.user);
+        Post.belongsTo(models.user, {
+            foreignKey: 'post_name',
+            sourceKey: 'username'
+        });
         Post.belongsTo(models.subject);
     };
 
