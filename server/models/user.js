@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define("User", {
+  const User = sequelize.define("user", {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,13 +30,22 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     user_bio: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     }
   });
+
   User.prototype.comparePassword = function (challenge) {
     return this.password === challenge;
   }
+
+  User.associate = models => {
+    User.belongsToMany(models.subject, {
+      through: "user_subject"
+    });
+    User.hasOne(models.post, { foreignKey: 'post_name', sourceKey: 'username' });
+  }
+
   return User;
 };
 
