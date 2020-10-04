@@ -1,27 +1,15 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
+import logo from '../../assets/images/StudyMate-Logo.png';
 
 class HomePage extends Component {
   render() {
     return (
       <div className='Home'>
-        <div className='row'>
-          <div className='col'>
-            <img src={logo} className='App-logo' alt='logo' />
+            <img src={logo} alt='logo' className='mb-5' style={{left: '100px'}} />
             <p>
-              Edit <code>src/pages/Home.js</code> and save to reload.
+              Welcome to StudyMate! StudyMate is a web application that allows students to meet and study subjects together. Students can sign up to our site and fill out their profile with information such as their major, current classes, what subject they are most proficient in, what university they attend, and a brief bio about themselves.
             </p>
-            <a
-              className='App-link'
-              href='https://reactjs.org'
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </div>
-        </div>
       </div>
     );
   }

@@ -1,0 +1,11 @@
+.teal {
+    background-color: #14cbba;
+}
+
+.purple {
+    background-color: #753b92;
+}
+
+.tealAndPurple {
+    background-image: linear-gradient(to bottom right, #14cbba, #753b92);
+}
