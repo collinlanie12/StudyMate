@@ -19,19 +19,19 @@ module.exports = function (sequelize, DataTypes) {
     },
     is_student: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: true
     },
     is_tutor: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: true
     },
     timezone: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     user_bio: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     }
   });
 
