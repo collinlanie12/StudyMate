@@ -18,7 +18,6 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Post.associate = models => {
-        Post.belongsTo(models.user);
         Post.belongsTo(models.subject);
     };
 
