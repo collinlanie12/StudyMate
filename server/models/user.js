@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true
     },
     timezone: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     user_bio: {
@@ -43,7 +43,6 @@ module.exports = function (sequelize, DataTypes) {
     User.belongsToMany(models.subject, {
       through: "user_subject"
     });
-    User.hasOne(models.post, { foreignKey: 'post_name', sourceKey: 'username' });
   }
 
   return User;
