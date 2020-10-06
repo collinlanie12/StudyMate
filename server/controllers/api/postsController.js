@@ -3,7 +3,7 @@ const postsController = require('express').Router();
 const db = require('../../models');
 
 postsController.post('/create', (req, res) => {
-    const { title, content, time , subjectId} = req.body;
+    const { title, content, time, subjectId } = req.body;
 
     db.post.create({ title, content, time, subjectId })
         .then(post => res.json(post))
@@ -24,7 +24,7 @@ postsController.get("/subject/:subjectId", (req, res) => {
     db.post.findAll({
         include: [{
             model: db.subject,
-            where: { id: req.params.subjectId } 
+            where: { id: req.params.subjectId }
         }]
     }).then(result => {
         res.json(result);
