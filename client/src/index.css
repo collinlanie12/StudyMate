@@ -12,3 +12,92 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* ===================================================================post bubbles================================================================== */
+
+.textBubble:hover {
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1, 1.1);
+}
+
+.textBubble {
+  padding: 10px 10px;
+  text-align: center;
+  transition: all 0.6s ease;
+  background-color: rgb(135, 197, 135) !important;
+  margin: auto;
+  width: 50%;
+}
+
+.teacher {
+  background-color: rgb(135, 197, 135) !important;
+}
+
+.student {
+  background-color: rgb(179, 134, 197) !important;
+}
+
+.tutor {
+  background-color: rgb(114, 159, 211) !important;
+}
+
+/* ===================================================================Left side Nav================================================================= */
+
+.sidenav {
+  height: 100%;
+  width: 23%;
+  position: fixed;
+  z-index: 1;
+  top: 10;
+  left: 0;
+  /* background-color: #343a40; */
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #4bcbd4;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #bf3cda;
+}
+
+
+/* ===============================================================right side calendar========================================================== */
+
+
+span.crud {
+  background-image: url();
+  background-position: left center;
+  background-repeat: no-repeat;
+  float: right;
+  height: 60px;
+  overflow: hidden;
+  padding: 0 0 0 32px;
+  width: 0;
+  border-radius: 8px 0px 0px 8px;
+  background-color: rgb(49, 159, 233);
+  position: absolute;
+  top: 43px;
+  right: 0px;
+  border: 4px rgb(179, 62, 233) solid;
+  border-right: none;
+}
+span.crud:hover {
+  width: 320px;
+}
+
+
+.transitioning {
+  -webkit-transition: all 0.75s ease-in-out;
+  -moz-transition: all 0.75s ease-in-out;
+  -o-transition: all 0.75s ease-in-out;
+  -ms-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
