@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true
     },
     timezone: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     user_bio: {
