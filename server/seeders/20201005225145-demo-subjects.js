@@ -2,23 +2,60 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+    return queryInterface.bulkInsert('subjects', [{
+      subject: 'Engineering & Technology',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Computer Science & Information Systems',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Business & Management Studies',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Medicine',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Economics & Econometrics',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Law',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Mechanical, Aeronautical & Manufacturing Engineering',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Arts & Humanities',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Architecture',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      subject: 'Accounting & Finance',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    return queryInterface.bulkDelete('subjects', null, {});
   }
 };
