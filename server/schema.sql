@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS studymate;
-CREATE DATABASE studymate;
