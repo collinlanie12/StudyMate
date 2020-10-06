@@ -12,3 +12,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/* ===================================================================post bubbles================================================================== */
+
+
+.textBubble:hover {
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1, 1.1);
+}
+
+.textBubble {
+  padding: 10px 10px;
+  text-align: center;
+  transition: all 0.6s ease;
+  background-color: rgb(135, 197, 135) !important;
+}
+
+.teacher{
+  background-color: rgb(135, 197, 135) !important;
+}
+
+.student{
+  background-color: rgb(179, 134, 197) !important;
+}
+
+.tutor{
+  background-color: rgb(114, 159, 211) !important;
+}
