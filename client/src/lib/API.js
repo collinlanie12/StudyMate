@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export default {
+
   Users: {
     login: function (email, password) {
       return axios.post('/api/users/login', { email, password });
@@ -8,6 +9,10 @@ export default {
 
     create: function (email, password) {
       return axios.post('/api/users/', { email, password });
+    },
+
+    update: function (email, password, username, is_student, is_tutor, timezone, user_bio) {
+      return axios.put('/api/users/', { email, password, username, is_student, is_tutor, timezone, user_bio });
     },
 
     getMe: function (authToken) {
@@ -19,6 +24,38 @@ export default {
     }
   },
 
+  Posts: {
+    getAll: function (authToken) {
+      return axios.get('/api/posts/all', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+
+    create: function (authToken, title, content, time, subjectId) {
+      return axios.post('/api/posts/create', { title, content, time, subjectId }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+
+    getBySubject: function (authToken, subjectId) {
+      return axios.get(`/api/posts/subject/${subjectId}`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    }
+  },
+
+  Subjects: {
+    getAll: function () {
+      return axios.get("api/subjects/");
+    }
+  },
+
   Secrets: {
     getAll: function (authToken) {
       return axios.get('/api/secrets', {
@@ -27,5 +64,6 @@ export default {
         }
       });
     }
-  }
-}
+  },
+
+};
