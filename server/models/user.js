@@ -19,7 +19,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     is_student: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      default: 1
     },
     is_tutor: {
       type: DataTypes.BOOLEAN,

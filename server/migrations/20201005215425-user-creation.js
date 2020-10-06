@@ -28,7 +28,8 @@ module.exports = {
       },
       is_student: {
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: false,
+        default: 1,
       },
       is_tutor: {
         type: Sequelize.BOOLEAN,
