@@ -3,9 +3,9 @@ const postsController = require('express').Router();
 const db = require('../../models');
 
 postsController.post('/create', (req, res) => {
-    const { title, content, time } = req.body;
+    const { title, content, time , subjectId} = req.body;
 
-    db.post.create({ title, content, time })
+    db.post.create({ title, content, time, subjectId })
         .then(post => res.json(post))
         .catch(err => res.json(err));
 });
