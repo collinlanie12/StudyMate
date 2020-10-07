@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 import AuthContext from "../../contexts/AuthContext";
 import AuthDropdown from "../../components/AuthDropdown/AuthDropdown";
@@ -59,29 +60,21 @@ class Navigation extends Component {
                     Main
                   </Link>
                 </li>
-                
               )}
-
-              {user && (
-              <form class="form-inline my-2 my-lg-0 searchBar">
-                <input
-                  class="form-control mr-sm-1"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                  Search
-                </button>
-              </form>
-              )}
-
-              <i
-                className="fa fa-bell mr-3"
-                style={{fontSize: "25px", color: "white"}}
-              ></i>
             </ul>
+
             <ul className="navbar-nav">
+              {/* =================================================Notification Bell============================================= */}
+
+              <li className="notification">
+                <span className="badge mt-1">3</span>
+                <i
+                  className="fa fa-bell mr-3 mt-2"
+                  style={{ fontSize: "30px", color: "white" }}
+                ></i>
+              </li>
+              {/* Drop Down user email and logout */}
+
               {user ? (
                 <AuthDropdown onClick={this.toggleCollapse} />
               ) : (
