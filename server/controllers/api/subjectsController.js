@@ -4,7 +4,7 @@ const { JWTVerifier } = require('../../lib/passport');
 const db = require('../../models');
 
 subjectsController.get('/', (req, res) => {
-  db.subject.findAll()
+  db.Subject.findAll()
     .then(subjects => res.json(subjects))
     .catch(err => console.log(err));
 });

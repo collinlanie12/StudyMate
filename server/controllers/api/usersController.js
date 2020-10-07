@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 usersController.post('/', (req, res) => {
   const { email, password } = req.body;
 
-  db.user.create({ email, password })
+  db.User.create({ email, password })
     .then(user => res.json(user))
     .catch(err => res.json(err));
 });
@@ -19,7 +19,7 @@ usersController.get('/me', JWTVerifier, (req, res) => {
 usersController.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  db.user.findOne({ where: { email } })
+  db.User.findOne({ where: { email } })
     .then(user => {
       if (!user || !user.comparePassword(password)) {
         return res.status(401).send("Unauthorized");
@@ -34,7 +34,7 @@ usersController.post('/login', (req, res) => {
 
 usersController.put('/', JWTVerifier, (req, res) => {
   const { username, is_tutor, timezone, user_bio } = req.body;
-  db.user.update({
+  db.User.update({
     username,
     is_tutor,
     timezone,

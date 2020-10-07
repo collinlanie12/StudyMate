@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('posts', {
+    return queryInterface.createTable('Posts', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -27,20 +27,20 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE
       },
-      subjectId: {
+      SubjectId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: "subjects",
+          model: "Subjects",
           key: "id"
         }
       },
-      userId: {
+      UserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: {
-            model: "users",
+            model: "Users",
             key: "id"
           }
         }
@@ -49,6 +49,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('posts');
+    return queryInterface.dropTable('Posts');
   }
 };
