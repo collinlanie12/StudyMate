@@ -11,8 +11,8 @@ export default {
       return axios.post('/api/users/', { email, password });
     },
 
-    update: function (email, password, username, is_student, is_tutor, timezone, user_bio) {
-      return axios.put('/api/users/', { email, password, username, is_student, is_tutor, timezone, user_bio });
+    update: function (email, password, is_student, is_tutor, timezone, user_bio, subjects) {
+      return axios.put('/api/users/', { email, password, is_student, is_tutor, timezone, user_bio, subjects});
     },
 
     getMe: function (authToken) {
