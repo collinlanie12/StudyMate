@@ -12,9 +12,11 @@ export default {
     },
 
     update: function (authToken, username, is_tutor, timezone, user_bio) {
-      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio },{headers: {
-        'Authorization': `Bearer ${authToken}`
-      }});
+      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     },
 
     getMe: function (authToken) {
@@ -67,5 +69,4 @@ export default {
       });
     }
   },
-
 };
