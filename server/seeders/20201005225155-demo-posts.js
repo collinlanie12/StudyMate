@@ -9,6 +9,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 1,
+      userId: 1
     },
     {
       content: 'Hosting tutoring event for math.',
@@ -17,6 +18,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 1,
+      userId: 2
     },
     {
       content: 'Hosting tutoring event for Literature.',
@@ -25,6 +27,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 8,
+      userId: 3
     },
     {
       content: 'Hosting tutoring event for Law.',
@@ -33,6 +36,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 6,
+      userId: 4
     },
     {
       content: 'Hosting tutoring event for Biology.',
@@ -41,6 +45,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 4,
+      userId: 2
     },
     {
       content: 'Hosting tutoring event for project management.',
@@ -49,6 +54,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       subjectId: 3,
+      userId: 3
     }]);
   },
 

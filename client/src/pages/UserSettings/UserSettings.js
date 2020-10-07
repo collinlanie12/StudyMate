@@ -4,63 +4,29 @@ import DefaultProfile from "../../assets/images/default-profile-picture.png";
 import AuthContext from "../../contexts/AuthContext";
 
 function UserSettings() {
-    // static contextType = AuthContext;
+    const auth = useContext(AuthContext);
 
-    const value = useContext(AuthContext);
-
-    const [email, setEmail] = useState([]);
-    const [username, setUsername] = useState([]);
-    const [is_tutor, setIs_tutor] = useState([]);
-    const [timezone, setTimezone] = useState([]);
-    const [user_bio, setUser_bio] = useState([]);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            // const { username, is_tutor, timezone, user_bio } = value.user;
-            // console.log(username, is_tutor, timezone, user_bio );
-            loadUser();
-        }, 10000);
-        return () => clearTimeout(timer);
-    }, [])
+    const [username, setUsername] = useState("");
+    const [is_tutor, setIs_tutor] = useState(0);
+    const [timezone, setTimezone] = useState(-5);
+    const [user_bio, setUser_bio] = useState("");
 
 
-    function loadUser() {
-        console.log(value);
-        console.log(email);
-    }
-    // componentDidUpdate(){
-    //     console.log(this.context.user)
-    //    if(this.context.user.email !== this.state.username){
-    //        this.setState({username: this.context.user.email})
-    //    }
-    // }
-    // componentDidUpdate() {
-    //     console.log(this.context.user)
-    //     if (this.context.user.username) {
-    //         this.setState({ username: this.context.user.username })
-    //     }
-    // }
     function handleFormSubmit(e) {
         e.preventDefault();
-        console.log(value);
 
-        const { username, is_tutor, timezone, user_bio } = this.state;
-        console.log(this.context.user.email)
-        API.Users.update(this.context.user.authToken, username, is_tutor, timezone, user_bio)
+        API.Users.update(auth.authToken, username, parseInt(is_tutor), parseInt(timezone), user_bio)
             .then(response => response.data)
             .then(user => console.log(user))
-            .catch(err => this.setState({ error: err.message }));
+            .catch(err => console.log(err.message));
     };
 
-    // render() {
-    //     const { username, is_tutor, timezone, user_bio } = this.state;
-    //     console.log(this.context)
     return (
         <div className='container'>
             <div className='row'>
                 <div className='col-12'>
                     <form onSubmit={handleFormSubmit}>
-                        <h1 className="mb-5">Hello {email}</h1>
+                        <h1 className="mb-5">Hello {auth.user ? auth.user.email : "Loading..."}</h1>
                         <label>Avatar:</label>
                         <img src={DefaultProfile} className="img-fluid ml-5" alt="Avatar" style={{ width: "200px", height: "200px", borderRadius: "8px" }} />
                         <div className='form-group mt-5'>
@@ -114,7 +80,6 @@ function UserSettings() {
             </div>
         </div>
     );
-    // }
 }
 
 export default UserSettings;

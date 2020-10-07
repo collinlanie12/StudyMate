@@ -26,11 +26,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      is_student: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        default: 1,
-      },
       is_tutor: {
         type: Sequelize.BOOLEAN,
         allowNull: true

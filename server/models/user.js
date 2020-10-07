@@ -17,11 +17,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    is_student: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      default: 1
-    },
     is_tutor: {
       type: DataTypes.BOOLEAN,
       allowNull: true
@@ -44,6 +39,7 @@ module.exports = function (sequelize, DataTypes) {
     User.belongsToMany(models.subject, {
       through: "user_subject"
     });
+    User.hasMany(models.post);
   }
 
   return User;
