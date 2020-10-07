@@ -11,8 +11,12 @@ export default {
       return axios.post('/api/users/', { email, password });
     },
 
-    update: function (email, password, is_student, is_tutor, timezone, user_bio, subjects) {
-      return axios.put('/api/users/', { email, password, is_student, is_tutor, timezone, user_bio, subjects});
+    update: function (authToken, username, is_tutor, timezone, user_bio) {
+      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     },
 
     getMe: function (authToken) {
@@ -40,6 +44,8 @@ export default {
         }
       });
     },
+
+    
 
     getBySubject: function (authToken, subjectId) {
       return axios.get(`/api/posts/subject/${subjectId}`, {
