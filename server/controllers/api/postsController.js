@@ -2,6 +2,7 @@ const postsController = require('express').Router();
 
 const db = require('../../models');
 
+//create a post
 postsController.post('/create', (req, res) => {
     const { title, content, time, subjectId } = req.body;
 
@@ -10,6 +11,7 @@ postsController.post('/create', (req, res) => {
         .catch(err => res.json(err));
 });
 
+//get all posts
 postsController.get("/all", (req, res) => {
     db.post.findAll({
         include: [{
@@ -20,6 +22,7 @@ postsController.get("/all", (req, res) => {
     });
 });
 
+//get post(s) by subjectId
 postsController.get("/subject/:subjectId", (req, res) => {
     db.post.findAll({
         include: [{
