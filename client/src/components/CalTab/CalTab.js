@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 
 function CalTab(props) {
@@ -8,7 +8,7 @@ function CalTab(props) {
       style={{ top: "40px", right: "0px" }}
     >
       <strong>Math</strong>
-      <p>You have math at 3pm you piece of shit</p>
+      <p>You have math at 3pm you trash bag</p>
     </span>
   );
 }
