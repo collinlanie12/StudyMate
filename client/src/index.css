@@ -71,7 +71,9 @@ code {
 }
 
 .sidenav a:hover {
-  color: #bf3cda;
+  color: #000000;
+  background-color: #bf3cda;
+  opacity: 30%;
 }
 
 
@@ -82,23 +84,20 @@ span.crud {
   background-image: url();
   background-position: left center;
   background-repeat: no-repeat;
-  float: right;
-  height: 60px;
+  height: 80px;
   overflow: hidden;
   padding: 0 0 0 32px;
   width: 0;
   border-radius: 8px 0px 0px 8px;
   background-color: rgb(49, 159, 233);
   position: absolute;
-  top: 43px;
-  right: 0px;
+
   border: 4px rgb(179, 62, 233) solid;
   border-right: none;
 }
 span.crud:hover {
   width: 320px;
 }
-
 
 .transitioning {
   -webkit-transition: all 0.75s ease-in-out;
