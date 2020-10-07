@@ -6,16 +6,16 @@ const db = require('../../models');
 postsController.post('/create', (req, res) => {
     const { title, content, time, subjectId } = req.body;
 
-    db.post.create({ title, content, time, subjectId })
+    db.Post.create({ title, content, time, subjectId })
         .then(post => res.json(post))
         .catch(err => res.json(err));
 });
 
 //get all posts
 postsController.get("/all", (req, res) => {
-    db.post.findAll({
+    db.Post.findAll({
         include: [{
-            model: db.subject
+            model: db.Subject
         }]
     }).then(result => {
         res.json(result);
@@ -24,9 +24,9 @@ postsController.get("/all", (req, res) => {
 
 //get post(s) by subjectId
 postsController.get("/subject/:subjectId", (req, res) => {
-    db.post.findAll({
+    db.Post.findAll({
         include: [{
-            model: db.subject,
+            model: db.Subject,
             where: { id: req.params.subjectId }
         }]
     }).then(result => {

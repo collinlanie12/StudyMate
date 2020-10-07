@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Post = sequelize.define("post",
+    const Post = sequelize.define("Post",
         {
             content: {
                 type: DataTypes.TEXT,
@@ -16,8 +16,11 @@ module.exports = function (sequelize, DataTypes) {
         });
 
     Post.associate = models => {
-        Post.belongsTo(models.subject);
-        Post.belongsTo(models.user);
+        Post.belongsTo(models.Subject);
+        Post.belongsTo(models.User);
+        Post.belongsToMany(models.User, {
+            through: "user_post"
+        })
     };
 
     return Post;
