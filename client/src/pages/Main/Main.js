@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
+import CalTab from "../../components/CalTab/CalTab";
+
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 import { InputGroup, FormControl, Button } from "react-bootstrap"
@@ -27,6 +29,8 @@ class Main extends Component {
   //     })
   //     .finally(() => this.setState({ isLoading: false }));
   // }
+
+
 
   render() {
     return (
@@ -67,11 +71,7 @@ class Main extends Component {
 
             <div className="col-3 rightSide">
               <h1 className="text-center calTitle">Calendar</h1>
-                <span className="crud transitioning mt-4">
-                  <strong>Math</strong>
-                  <p>You have math at 3pm you piece of shit</p>
-                </span>
-
+                <CalTab/>
             </div>
           </div>
         )}
