@@ -62,7 +62,7 @@ class Navigation extends Component {
                 </li>
               )}
             </ul>
-
+                
             <ul className="navbar-nav">
               {/* =================================================Notification Bell============================================= */}
 
