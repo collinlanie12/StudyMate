@@ -34,6 +34,16 @@ module.exports = {
           model: "subjects",
           key: "id"
         }
+      },
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            model: "users",
+            key: "id"
+          }
+        }
       }
     })
   },

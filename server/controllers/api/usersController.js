@@ -32,4 +32,19 @@ usersController.post('/login', (req, res) => {
     });
 });
 
+usersController.put('/', JWTVerifier, (req, res) => {
+  const { username, is_tutor, timezone, user_bio } = req.body;
+  db.user.update({
+    username,
+    is_tutor,
+    timezone,
+    user_bio
+  }, { where: { id: req.user.id } }
+  ).then(() => {
+    res.sendStatus(200);
+  }).catch(err => {
+    res.sendStatus(500);
+  });
+})
+
 module.exports = usersController;

@@ -11,8 +11,10 @@ export default {
       return axios.post('/api/users/', { email, password });
     },
 
-    update: function (email, password, username, is_student, is_tutor, timezone, user_bio) {
-      return axios.put('/api/users/', { email, password, username, is_student, is_tutor, timezone, user_bio });
+    update: function (authToken, username, is_tutor, timezone, user_bio) {
+      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio },{headers: {
+        'Authorization': `Bearer ${authToken}`
+      }});
     },
 
     getMe: function (authToken) {
