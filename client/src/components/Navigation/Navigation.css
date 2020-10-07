@@ -1,14 +1,68 @@
 .teal {
-    background-color: #14cbba;
+  background-color: #14cbba;
 }
 
 .purple {
-    background-color: #753b92;
+  background-color: #753b92;
 }
 
 .tealAndPurple {
-    background-image: linear-gradient(to bottom right, #14cbba, #753b92);
+  background-image: linear-gradient(to bottom right, #14cbba, #753b92);
 }
 
 
+
+
+/* ================================================================bell========================================================== */
+
+.notification .badge {
+    position: absolute;
+    top: -6px!important;
+    right: -2px !important;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+
+  .notification {
+    color: white;
+    text-decoration: none;
+    padding: 1px 1px;
+    position: relative;
+    display: inline-block;
+    border-radius: 1px;
+  }
+
   
+
+.dropdown {
+  display:inline-block;
+  margin-left:20px;
+  padding:10px;
+}
+
+.dropdown-menu{
+  top: 60px;
+  right: 0px;
+  left: unset;
+  width: 460px;
+  box-shadow: 0px 5px 7px -1px #c1c1c1;
+  padding-bottom: 0px;
+  padding: 0px;
+}
+
+.head{
+  padding:5px 15px;
+  border-radius: 3px 3px 0px 0px;
+}
+.footer{
+  padding:5px 15px;
+  border-radius: 0px 0px 3px 3px; 
+}
+.notification-box{
+  padding: 10px 0px; 
+}
+.bg-gray{
+  background-color: #eee;
+}
