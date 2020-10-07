@@ -32,4 +32,11 @@ usersController.post('/login', (req, res) => {
     });
 });
 
+// usersController.put('/', JWTVerifier, (req, res) => {
+//   const { username, is_tutor, timezone, user_bio };
+//   console.log(req.user);
+//   db.user.update({ username, is_tutor, timezone, user_bio })
+//   console.log(req.user);
+// })
+
 module.exports = usersController;
