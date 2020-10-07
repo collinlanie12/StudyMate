@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Bubble from "../../components/Toast/Toast";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
+import { InputGroup, FormControl, Button } from "react-bootstrap"
+
 
 class Main extends Component {
   static contextType = AuthContext;
@@ -34,9 +36,9 @@ class Main extends Component {
         ) : this.state.error ? (
           <div className="alert alert-danger">{this.state.error}</div>
         ) : (
-          <div class="row">
-            <div class="col-3 leftSide">
-              <div class="sidenav">
+          <div className="row">
+            <div className="col-3 leftSide">
+              <div className="sidenav">
                 <a href="#">My Posts</a>
                 <a href="#">Services</a>
                 <a href="#">Clients</a>
@@ -44,12 +46,18 @@ class Main extends Component {
               </div>
             </div>
 
-            <div class="text-center col-6 middleRow">
-              <h2 class="mt-3 mb-4" >suggested for you</h2>
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-              <Bubble userType="student" />
+            <div className="text-center col-6 middleRow">
+              <h2 className="mt-3 mb-4" >suggested for you</h2>
+              <InputGroup className="mb-3">
+                <FormControl
+                  placeholder="Search new Subject's"
+                  aria-label="Search Subject"
+                  aria-describedby="basic-addon2"
+                />
+                <InputGroup.Append>
+                  <Button variant="outline-info">Search</Button>
+                </InputGroup.Append>
+              </InputGroup>
               <Bubble userType="student" />
               <Bubble userType="student" />
               <Bubble userType="student" />
@@ -57,9 +65,9 @@ class Main extends Component {
               <Bubble userType="student" />
             </div>
 
-            <div class="col-3 rightSide">
-              <h1 class="text-center calTitle">Calendar</h1>
-                <span class="crud transitioning">
+            <div className="col-3 rightSide">
+              <h1 className="text-center calTitle">Calendar</h1>
+                <span className="crud transitioning mt-4">
                   <strong>Math</strong>
                   <p>You have math at 3pm you piece of shit</p>
                 </span>
