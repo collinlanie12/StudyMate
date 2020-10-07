@@ -45,8 +45,6 @@ export default {
       });
     },
 
-    
-
     getBySubject: function (authToken, subjectId) {
       return axios.get(`/api/posts/subject/${subjectId}`, {
         headers: {
@@ -71,5 +69,4 @@ export default {
       });
     }
   },
-
 };
