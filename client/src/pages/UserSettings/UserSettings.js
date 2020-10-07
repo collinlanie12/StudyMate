@@ -10,16 +10,48 @@ function UserSettings() {
     const [is_tutor, setIs_tutor] = useState(0);
     const [timezone, setTimezone] = useState(-5);
     const [user_bio, setUser_bio] = useState("");
+    const [subjects, setSubjects] = useState([]);
+    const [selectedSubjects, setSelectedSubjects] = useState([]);
+
+    let subArr = [];
+
+    useEffect(() => {
+        API.Subjects.getAll(auth.authToken)
+            .then(response => {
+                console.log(response.data);
+                setSubjects(response.data);
+            })
+
+    }, []);
 
 
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        API.Users.update(auth.authToken, username, parseInt(is_tutor), parseInt(timezone), user_bio)
+        API.Users.update(auth.authToken, username, parseInt(is_tutor), parseInt(timezone), user_bio, selectedSubjects)
             .then(response => response.data)
             .then(user => console.log(user))
             .catch(err => console.log(err.message));
+
+        alert("Your info has been updated!");
     };
+
+    function handleCheckChange(e) {
+        
+        if (e.target.checked) {
+
+        subArr = subArr.concat(...selectedSubjects, e.target.value);
+
+        setSelectedSubjects(subArr);
+
+        } else {
+
+        let newSubArr = selectedSubjects.filter(subs => subs !== e.target.value);
+
+        setSelectedSubjects(newSubArr);
+        }
+
+    }
 
     return (
         <div className='container'>
@@ -69,6 +101,17 @@ function UserSettings() {
                                 <option value="11">UTC +11 (Bougainville Standard Time)</option>
                                 <option value="12">UTC +12 (New Zealand Standard Time)</option>
                             </select>
+                        </div>
+                        <label>What subjects are you interested in?</label>
+                        <div className="form-check text-left" onChange={handleCheckChange}>
+                            {subjects.map(subject => (<>
+                                <br />
+                                <input key={"Check-" + subject.id} className="form-check-input" type="checkbox" value={subject.id} />
+                                <label htmlFor={subject.subject} key={subject.id} className="form-check-label">
+                                    {subject.subject}
+                                </label>
+                            </>
+                            ))}
                         </div>
                         <div className="form-group">
                             <label>Tell us about yourself!</label>
