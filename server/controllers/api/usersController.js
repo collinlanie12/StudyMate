@@ -12,6 +12,11 @@ usersController.post('/', (req, res) => {
     .catch(err => res.json(err));
 });
 
+usersController.put("/",JWTVerifier, (req, res)=>{
+  console.log(req.user)
+  res.sendStatus(200)
+})
+
 usersController.get('/me', JWTVerifier, (req, res) => {
   res.json(req.user);
 });
