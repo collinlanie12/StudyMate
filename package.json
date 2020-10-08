@@ -13,6 +13,7 @@
     "client:dev": "cd client && yarn start",
     "server:dev": "cd server && yarn start:dev",
     "seeders": "cd server && npx sequelize-cli db:seed:all",
+    "migrate": "cd server && npx sequelize-cli db:migrate",
     "heroku-postbuild": "yarn build"
   },
   "devDependencies": {
