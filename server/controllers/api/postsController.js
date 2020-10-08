@@ -35,6 +35,33 @@ postsController.get("/subject/:subjectId", (req, res) => {
     });
 });
 
+// get UserIds associated with PostId
+postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
+    db.Post.findByPk(req.params.id)
+        .then(result => {
+            if (!result) {
+                return res.sendStatus(404);
+            }
+            return result.getUsers()
+            
+        })
+        .then(data => {
+            let usernameArr = [];
+            data.forEach(e => {
+                usernameArr.push(e.username);
+            });
+            return usernameArr;
+        })
+        .then(data => {
+            console.log(data)
+            res.json(data);
+        })
+        .catch(err => {
+            console.log(err)
+            res.json(err);
+        })
+});
+
 //new user signup to post
 postsController.post("/signup/add", (req, res) => {
     db.Post.findOne({
