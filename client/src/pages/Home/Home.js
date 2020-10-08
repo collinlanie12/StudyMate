@@ -6,7 +6,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className='Home'>
-            <img src={logo} alt='logo' className='mb-5' style={{left: '100px'}} />
+            <img src={logo} alt='logo' className='mb-5 SMTitle' style={{left: '100px'}} />
             <p>
               Welcome to StudyMate! StudyMate is a web application that allows students to meet 
               and study subjects together. Students can sign up to our site and fill out their profile 
