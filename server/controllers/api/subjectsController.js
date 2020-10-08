@@ -9,4 +9,8 @@ subjectsController.get('/', (req, res) => {
     .catch(err => console.log(err));
 });
 
+subjectsController.get('/:SubjectId', (req, res) => {
+  db.Subject.findOne({ where: { id: req.params.SubjectId } }).then(results => res.json(results));
+})
+
 module.exports = subjectsController;

@@ -25,6 +25,10 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    findUser: function (UserId) {
+      return axios.get(`/api/users/${UserId}`);
     }
   },
 
@@ -57,6 +61,9 @@ export default {
   Subjects: {
     getAll: function () {
       return axios.get("api/subjects/");
+    },
+    findSubject: function (SubjectId) {
+      return axios.get(`/api/subjects/${SubjectId}`);
     }
   },
 
