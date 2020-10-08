@@ -5,20 +5,16 @@ const db = require('../../models');
 
 //create a post
 postsController.post('/create', (req, res) => {
-    const { title, content, time, subjectId, userId } = req.body;
+    const { title, content, time, date, link, SubjectId, UserId } = req.body;
 
-    db.Post.create({ title, content, time, subjectId, userId })
+    db.Post.create({ title, content, time, date, link, SubjectId, UserId })
         .then(post => res.json(post))
         .catch(err => res.json(err));
 });
 
 //get all posts
 postsController.get("/all", (req, res) => {
-    db.Post.findAll({
-        include: [{
-            model: db.Subject
-        }]
-    }).then(result => {
+    db.Post.findAll({}).then(result => {
         res.json(result);
     });
 });

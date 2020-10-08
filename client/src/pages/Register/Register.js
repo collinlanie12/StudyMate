@@ -8,7 +8,7 @@ import API from '../../lib/API';
 
 class Register extends Component {
   static contextType = AuthContext;
-  
+
   state = {
     redirectToReferrer: false,
     error: ""
@@ -23,11 +23,11 @@ class Register extends Component {
       .then(response => response.data)
       .then(user => console.log(user))
       .then(API.Users.login(email, password)
-      .then(response => response.data)
-      .then(({ user, token }) => {
-        this.context.onLogin(user, token);
-        this.setState({ redirectToReferrer: true, error: "" });
-      }))
+        .then(response => response.data)
+        .then(({ user, token }) => {
+          this.context.onLogin(user, token);
+          this.setState({ redirectToReferrer: true, error: "" });
+        }))
       .catch(err => this.setState({ error: err.message }));
   }
 

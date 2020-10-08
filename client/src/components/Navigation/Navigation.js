@@ -28,9 +28,9 @@ class Navigation extends Component {
     return (
       <div className="Navigation sticky-top">
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark tealAndPurple mb-3">
-          <Link className="navbar-brand" to="#">
-            Project 3
-          </Link>
+          <span className="navbar-brand">
+            StudyMate
+          </span>
           <button
             className={togglerClass}
             onClick={this.toggleCollapse}

@@ -10,7 +10,15 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
             time: {
-                type: DataTypes.DATE,
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            date: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            link: {
+                type: DataTypes.STRING,
                 allowNull: false
             }
         });
