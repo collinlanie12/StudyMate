@@ -11,10 +11,6 @@
 }
 
 
-
-
-/* ================================================================bell========================================================== */
-
 .notification .badge {
     position: absolute;
     top: -6px!important;
@@ -33,8 +29,13 @@
     display: inline-block;
     border-radius: 1px;
   }
-
   
+
+
+
+
+/* ================================================================bell========================================================== */
+
 
 .dropdown {
   display:inline-block;
@@ -42,6 +43,9 @@
   padding:10px;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #17A2B8;
+}
 .dropdown-menu{
   top: 60px;
   right: 0px;
@@ -51,7 +55,14 @@
   padding-bottom: 0px;
   padding: 0px;
 }
-
+.dropdown-menu:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 12px;
+  border:10px solid #343A40;
+  border-color: transparent transparent #343A40 transparent;
+}
 .head{
   padding:5px 15px;
   border-radius: 3px 3px 0px 0px;
@@ -65,4 +76,20 @@
 }
 .bg-gray{
   background-color: #eee;
+}
+@media (max-width: 640px) {
+    .dropdown-menu{
+      top: 50px;
+      left: -16px;  
+      width: 290px;
+    } 
+    .nav{
+      display: block;
+    }
+    .nav .nav-item,.nav .nav-item a{
+      padding-left: 0px;
+    }
+    .message{
+      font-size: 13px;
+    }
 }
