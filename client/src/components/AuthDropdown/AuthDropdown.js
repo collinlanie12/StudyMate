@@ -22,6 +22,10 @@ class AuthDropdown extends Component {
     this.props.onClick();
   }
 
+  handleSettings = () => {
+
+  }
+
   render() {
     const { user } = this.context;
     const { isOpen } = this.state;
@@ -29,14 +33,17 @@ class AuthDropdown extends Component {
     const dropdownMenuClass = `dropdown-menu dropdown-menu-right ${isOpen && 'show'}`;
 
     return (
-      <li className="nav-item dropdown">
-        <button className="btn dropdown-toggle" onClick={this.toggleOpen} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <Gravatar className="rounded-circle" email={user.email} size={30} /> {user.email}
-        </button>
-        <div className={dropdownMenuClass} aria-labelledby="navbarDropdown">
-          <div className="dropdown-item" onClick={this.handleLogout}>Logout</div>
-        </div>
-      </li>
+      <>
+        <li className="nav-item dropdown">
+          <button className="btn dropdown-toggle" onClick={this.toggleOpen} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Gravatar className="rounded-circle" email={user.email} size={30} /> {user.email}
+          </button>
+          <div className={dropdownMenuClass} aria-labelledby="navbarDropdown">
+            <div className="dropdown-item" onClick={this.handleLogout}>Logout</div>
+            <Link className="dropdown-item" to="/user-settings">User Settings</Link>
+          </div>
+        </li>
+      </>
     );
   }
 }
