@@ -22,10 +22,6 @@ class AuthDropdown extends Component {
     this.props.onClick();
   }
 
-  handleSettings = () => {
-
-  }
-
   render() {
     const { user } = this.context;
     const { isOpen } = this.state;
