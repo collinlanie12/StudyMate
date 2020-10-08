@@ -11,8 +11,8 @@ export default {
       return axios.post('/api/users/', { email, password });
     },
 
-    update: function (authToken, username, is_tutor, timezone, user_bio) {
-      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio }, {
+    update: function (authToken, username, is_tutor, timezone, user_bio, selectedSubjects) {
+      return axios.put('/api/users/', { username, is_tutor, timezone, user_bio, selectedSubjects }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }

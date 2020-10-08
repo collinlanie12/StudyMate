@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Subject = sequelize.define("subject",
+    const Subject = sequelize.define("Subject",
         {
             subject: {
                 type: DataTypes.STRING,
@@ -9,10 +9,10 @@ module.exports = function (sequelize, DataTypes) {
     );
 
     Subject.associate = models => {
-        Subject.belongsToMany(models.user, {
+        Subject.belongsToMany(models.User, {
             through: "user_subject"
         });
-        Subject.hasOne(models.post);
+        Subject.hasOne(models.Post);
     };
     return Subject;
 };

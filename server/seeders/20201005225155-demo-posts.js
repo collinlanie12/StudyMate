@@ -2,14 +2,14 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('posts', [{
+    return queryInterface.bulkInsert('Posts', [{
       content: 'Hosting tutoring event for math.',
       title: 'Calculus 2',
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 1,
-      userId: 1
+      SubjectId: 1,
+      UserId: 1
     },
     {
       content: 'Hosting tutoring event for math.',
@@ -17,8 +17,8 @@ module.exports = {
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 1,
-      userId: 2
+      SubjectId: 1,
+      UserId: 2
     },
     {
       content: 'Hosting tutoring event for Literature.',
@@ -26,8 +26,8 @@ module.exports = {
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 8,
-      userId: 3
+      SubjectId: 8,
+      UserId: 3
     },
     {
       content: 'Hosting tutoring event for Law.',
@@ -35,8 +35,8 @@ module.exports = {
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 6,
-      userId: 4
+      SubjectId: 6,
+      UserId: 4
     },
     {
       content: 'Hosting tutoring event for Biology.',
@@ -44,8 +44,8 @@ module.exports = {
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 4,
-      userId: 2
+      SubjectId: 4,
+      UserId: 2
     },
     {
       content: 'Hosting tutoring event for project management.',
@@ -53,12 +53,12 @@ module.exports = {
       time: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      subjectId: 3,
-      userId: 3
+      SubjectId: 3,
+      UserId: 3
     }]);
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('posts', null, {});
+    return queryInterface.bulkDelete('Posts', null, {});
   }
 };
