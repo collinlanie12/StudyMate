@@ -37,16 +37,16 @@ export default {
       });
     },
 
-    create: function (authToken, title, content, time, subjectId) {
-      return axios.post('/api/posts/create', { title, content, time, subjectId }, {
+    create: function (authToken, title, content, time, SubjectId) {
+      return axios.post('/api/posts/create', { title, content, time, SubjectId }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
       });
     },
 
-    getBySubject: function (authToken, subjectId) {
-      return axios.get(`/api/posts/subject/${subjectId}`, {
+    getBySubject: function (authToken, SubjectId) {
+      return axios.get(`/api/posts/subject/:${SubjectId}`, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
