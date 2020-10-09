@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Col, Toast } from "react-bootstrap";
-import AuthContext from "../../contexts/AuthContext";
+import { Toast, Button, ListGroup } from "react-bootstrap";
 import API from "../../lib/API";
+import AuthContext from "../../contexts/AuthContext";
+
+import "./Toast.css";
+
 
 function Bubble(props) {
   let time;
@@ -102,12 +105,13 @@ function Bubble(props) {
 
 
   return (
-    <div>
+    <>
       <Toast
         className={`textBubble mt-3 ${props.userType}`}
         onClose={toggleShowB}
         show={showB}
         animation={false}
+        style={{ minWidth: "335px" }}
       >
         <Toast.Header>
           <img
@@ -129,9 +133,10 @@ function Bubble(props) {
             <br></br>
             {props.content}
           </div>
+          <Button onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
         </Toast.Body>
       </Toast>
-    </div>
+    </>
   );
 }
 

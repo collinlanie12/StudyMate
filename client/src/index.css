@@ -1,9 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font: 400 15px/1.8 "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./assets/images/background.png");
@@ -16,40 +14,12 @@ code {
 
 
 
-/* =====================================================================navbar================================================ */
+/* =====================================================================navbar================================================================== */
 
 .dropdown{
   color:red!important;
 }
 
-
-/* ===================================================================post bubbles================================================================== */
-
-.textBubble:hover {
-  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.3);
-  transform: scale(1.1, 1.1);
-}
-
-.textBubble {
-  padding: 10px 10px;
-  text-align: center;
-  transition: all 0.6s ease;
-  background-color: rgb(135, 197, 135) !important;
-  margin: auto;
-  width: 50%;
-}
-
-.teacher {
-  background-color: rgb(135, 197, 135) !important;
-}
-
-.student {
-  background-color: rgb(179, 134, 197) !important;
-}
-
-.tutor {
-  background-color: rgb(114, 159, 211) !important;
-}
 
 /* ===================================================================Left side Nav================================================================= */
 
@@ -80,132 +50,3 @@ code {
 }
 
 
-/* ===============================================================right side calendar========================================================== */
-
-
-span.crud {
-  background-image: url();
-  background-position: left center;
-  background-repeat: no-repeat;
-  height: 80px;
-  overflow: hidden;
-  padding: 0 0 0 32px;
-  width: 0;
-  border-radius: 8px 0px 0px 8px;
-  background-color: rgb(49, 159, 233);
-  position: absolute;
-
-  border: 4px rgb(179, 62, 233) solid;
-  border-right: none;
-}
-span.crud:hover {
-  width: 320px;
-}
-
-.transitioning {
-  -webkit-transition: all 0.75s ease-in-out;
-  -moz-transition: all 0.75s ease-in-out;
-  -o-transition: all 0.75s ease-in-out;
-  -ms-transition: all 0.75s ease-in-out;
-  transition: all 0.75s ease-in-out;
-}
-
-.rightSide {
-  height: 100%;
-  width: 23%;
-  position: fixed;
-  z-index: 1;
-  top: 10;
-  right: 0;
-  padding-top: 20px;
-}
-
-
-
-/* =====================================================================HomePage======================================================== */
-
-
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-
-.bgimg-1 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 730px;
-}
-
-.bgimg-2 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 400px;
-}
-
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
-
-.intro {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
-}
-
-.banner-cont {
-  float: left;
-  width: 100%;
-  text-align: right;
-  margin: -250px -45px 0;
-  font-size: 106px;
-  color: rgba(255, 255, 255, 0.842);
-  /* line-height: 90px; */
-}
-
-.banner-cont {
-  font-family: 'Montserrat', sans-serif;
-}
-
-
-
-.banner-cont { 
-  animation: fadeInAnimation ease 4.5s; 
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
-} 
-
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-  } 
-}

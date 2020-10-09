@@ -63,6 +63,14 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    getSignups: function (authToken, PostId) {
+      return axios.get(`/api/posts/signup/get/${PostId}`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     }
   },
 
