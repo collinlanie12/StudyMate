@@ -26,7 +26,7 @@ function PostForm() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link)
+        API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link, auth.user.id)
             .then(response => response.data)
             .then(user => console.log(user))
             .catch(err => console.log(err.message));
