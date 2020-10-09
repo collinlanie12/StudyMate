@@ -6,31 +6,36 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       PostId: 2,
-      UserId: 1
+      UserId: 1,
+      is_calendar: 0
     },
     {
       createdAt: new Date(),
       updatedAt: new Date(),
       PostId: 3,
-      UserId: 1
+      UserId: 1,
+      is_calendar: 0
     },
     {
       createdAt: new Date(),
       updatedAt: new Date(),
       PostId: 4,
-      UserId: 3
+      UserId: 3,
+      is_calendar: 0
     },
     {
       createdAt: new Date(),
       updatedAt: new Date(),
       PostId: 5,
-      UserId: 2
+      UserId: 2,
+      is_calendar: 0
     },
     {
       createdAt: new Date(),
       updatedAt: new Date(),
       PostId: 6,
-      UserId: 4
+      UserId: 4,
+      is_calendar: 0
     },
     ])
   },

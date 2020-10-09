@@ -61,4 +61,12 @@ postsController.delete("/signup/remove", JWTVerifier, (req, res) => {
         });
 });
 
+postsController.delete("/user-post/remove", JWTVerifier, (req, res) => {
+    db.Post.findOne({
+        where: { UserId: req.user.id }
+    }).then(result => {
+        res.json(result);
+    })
+})
+
 module.exports = postsController;

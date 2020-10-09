@@ -55,6 +55,14 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    userRemovePost: function (authToken) {
+      return axios.delete('/api/posts/user-post/remove', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     }
   },
 

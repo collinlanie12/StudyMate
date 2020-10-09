@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Col, Toast } from "react-bootstrap";
+import AuthContext from "../../contexts/AuthContext";
 import API from "../../lib/API";
 
 function Bubble(props) {
   let time;
 
+  const auth = useContext(AuthContext);
   const [showB, setShowB] = useState(true);
   const [userName, setUserName] = useState("");
   const [subjectName, setSubjectName] = useState("");
-  const toggleShowB = () => setShowB(!showB);
+  const toggleShowB = () => {
+    setShowB(!showB);
+    API.Posts.userRemovePost(auth.authToken)
+      .then(result => {
+        console.log(result.data);
+      })
+  }
 
   switch (props.time) {
     case 0:
