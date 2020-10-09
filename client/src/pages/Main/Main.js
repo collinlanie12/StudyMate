@@ -6,11 +6,13 @@ import CalTab from "../../components/CalTab/CalTab";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 import { InputGroup, FormControl, Button } from "react-bootstrap"
+import Attendance from "../../components/Attendance/Attendance";
 
 
 function Main() {
   const auth = useContext(AuthContext);
-
+  const [showAttendance, setShowAttendance] = useState(false);
+  const [attendanceId, setAttendanceId] = useState();
 
   const [posts, setPosts] = useState([]);
 
@@ -22,6 +24,12 @@ function Main() {
       })
   }, []);
 
+  const handleAttendanceClick = (id) => {
+    console.log(id);
+    setShowAttendance(val => !val);
+    setAttendanceId(id);
+  }
+
   return (
     <div>
       <div className="row">
@@ -31,6 +39,7 @@ function Main() {
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
+            <Attendance isShowing={showAttendance} id={attendanceId} />
           </div>
         </div>
 
@@ -47,7 +56,8 @@ function Main() {
             </InputGroup.Append>
           </InputGroup>
           {posts.map(post => (
-            <Bubble userType="student" subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time} title={post.title} date={post.date} />
+            <Bubble userType="student" id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
+              title={post.title} date={post.date} isShowingAttendance={showAttendance} onAttendanceClick={handleAttendanceClick} />
           ))}
         </div>
 

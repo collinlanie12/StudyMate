@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Toast } from "react-bootstrap";
+import { Toast, Button, ListGroup } from "react-bootstrap";
 import API from "../../lib/API";
 
 function Bubble(props) {
@@ -17,7 +17,7 @@ function Bubble(props) {
 
 
   return (
-    <div>
+    <>
       <Toast
         className={`textBubble mt-3 ${props.userType}`}
         onClose={toggleShowB}
@@ -44,9 +44,10 @@ function Bubble(props) {
             <br></br>
             {props.content}
           </div>
+          <Button onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
         </Toast.Body>
       </Toast>
-    </div>
+    </>
   );
 }
 
