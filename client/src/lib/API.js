@@ -41,8 +41,8 @@ export default {
       });
     },
 
-    create: function (authToken, title, content, time, SubjectId, date, link) {
-      return axios.post('/api/posts/create', { title, content, time, SubjectId, date, link }, {
+    create: function (authToken, title, content, time, SubjectId, date, link, UserId) {
+      return axios.post('/api/posts/create', { title, content, time, SubjectId, date, link, UserId }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }

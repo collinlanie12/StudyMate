@@ -50,11 +50,11 @@ function PostForm() {
                         <div className='form-group'>
                             <label>What subject is this for?</label>
                             <select className="form-control" name="selectedSubject" onChange={e => setSelectedSubject(e.target.value)} defaultValue="1">
-                            {subjects.map(subject => (
-                            <>
-                                <option key={"Subject-" + subject.id} value={subject.id}>{subject.subject}</option>
-                            </>
-                            ))}
+                                {subjects.map(subject => (
+                                    <>
+                                        <option key={"Subject-" + subject.id} value={subject.id}>{subject.subject}</option>
+                                    </>
+                                ))}
                             </select>
                         </div>
                         <div className='form-group'>
@@ -62,8 +62,8 @@ function PostForm() {
                             <input className="form-control" type="text" placeholder="URL for meeting" name="link" value={link} onChange={e => setLink(e.target.value)} />
                         </div>
                         <div className="form-group">
-                        <label>What day are you hosting this event?</label>
-                        <input className="form-control" type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
+                            <label>What day are you hosting this event?</label>
+                            <input className="form-control" type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>What time is this event starting?</label>
