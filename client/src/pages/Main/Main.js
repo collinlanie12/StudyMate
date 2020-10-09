@@ -2,24 +2,28 @@ import React, { useState, useEffect, useContext } from "react";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
+import PostButton from "../../components/PostButton/PostButton"
+import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
-import PostButton from "../../components/PostButton/PostButton";
+
 
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 
 function Main() {
   const auth = useContext(AuthContext);
+  const postCon = useContext(PostContext);
 
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    API.Posts.getAll(auth.authToken).then((response) => {
-      console.log(response.data);
-      setPosts(response.data);
-    });
-  }, []);
+    API.Posts.getAll(auth.authToken)
+      .then(response => {
+        console.log(response.data);
+        setPosts(response.data);
+      })
+  }, [postCon.submitted]);
 
   return (
     <div>

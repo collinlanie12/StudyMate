@@ -1,17 +1,19 @@
 import React, { useEffect, useState, useContext } from 'react';
 import API from '../../lib/API';
 import AuthContext from "../../contexts/AuthContext";
+import PostContext from "../../contexts/PostContext";
 
 function PostForm() {
     const auth = useContext(AuthContext);
+    const Post = useContext(PostContext);
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [link, setLink] = useState("");
     const [date, setDate] = useState("");
-    const [time, setTime] = useState();
+    const [time, setTime] = useState(12);
     const [subjects, setSubjects] = useState([]);
-    const [selectedSubject, setSelectedSubject] = useState();
+    const [selectedSubject, setSelectedSubject] = useState(1);
 
     useEffect(() => {
         API.Subjects.getAll(auth.authToken)
@@ -29,9 +31,15 @@ function PostForm() {
         API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link, auth.user.id)
             .then(response => response.data)
             .then(user => console.log(user))
+            .then(phil => {
+                if (Post.submitted === false) {
+                    Post.onPostSubmit(true)
+                } else {
+                    Post.onPostSubmit(false)
+                };
+            }
+            )
             .catch(err => console.log(err.message));
-
-        alert("Your post has been created!");
     };
 
     return (
@@ -50,11 +58,11 @@ function PostForm() {
                         <div className='form-group'>
                             <label>What subject is this for?</label>
                             <select className="form-control" name="selectedSubject" onChange={e => setSelectedSubject(e.target.value)} defaultValue="1">
-                            {subjects.map(subject => (
-                            <>
-                                <option key={"Subject-" + subject.id} value={subject.id}>{subject.subject}</option>
-                            </>
-                            ))}
+                                {subjects.map(subject => (
+                                    <>
+                                        <option key={"Subject-" + subject.id} value={subject.id}>{subject.subject}</option>
+                                    </>
+                                ))}
                             </select>
                         </div>
                         <div className='form-group'>
@@ -62,8 +70,8 @@ function PostForm() {
                             <input className="form-control" type="text" placeholder="URL for meeting" name="link" value={link} onChange={e => setLink(e.target.value)} />
                         </div>
                         <div className="form-group">
-                        <label>What day are you hosting this event?</label>
-                        <input className="form-control" type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
+                            <label>What day are you hosting this event?</label>
+                            <input className="form-control" type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>What time is this event starting?</label>
