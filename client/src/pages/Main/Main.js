@@ -1,70 +1,61 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useContext } from "react";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
+import PostButton from "../../components/PostButton/PostButton";
 
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 
+function Main() {
+  const auth = useContext(AuthContext);
 
-class Main extends Component {
-  static contextType = AuthContext;
+  const [posts, setPosts] = useState([]);
 
-  state = {
-    isLoading: false,
-    error: "",
-  };
+  useEffect(() => {
+    API.Posts.getAll(auth.authToken).then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
+  }, []);
 
-  // componentDidMount() {
-  //   API.Main.getAll(this.context.authToken)
-  //     .then((response) => response.data)
-  //     .then((secrets) => this.setState({ secrets }))
-  //     .catch((err) => {
-  //       if (err.response.status === 401) {
-  //         return this.setState({ error: "Unauthorized. Please login." });
-  //       }
+  return (
+    <div>
+      <div className="row">
+        <div className="col-3 leftSide">
+          <SideNav />
+        </div>
 
-  //       console.log(err);
-  //     })
-  //     .finally(() => this.setState({ isLoading: false }));
-  // }
+        <div className="text-center col-6 middleRow">
+          <h2 className="mt-3 mb-4">suggested for you</h2>
+          <SearchBar />
+          {posts.map((post) => (
+            <Bubble
+              userType="student"
+              subjectName={post.SubjectId}
+              content={post.content}
+              userName={post.UserId}
+              time={post.time}
+              title={post.title}
+              date={post.date}
+            />
+          ))}
+        </div>
 
-
-
-  render() {
-    return (
-      <div>
-        {this.state.isLoading ? (
-          <div className="alert alert-success">Loading...</div>
-        ) : this.state.error ? (
-          <div className="alert alert-danger">{this.state.error}</div>
-        ) : (
-          <div className="row">
-            <div className="col-3 leftSide">
-            <SideNav/>
-            </div>
-
-            <div className="text-center col-6 middleRow">
-              <h2 className="mt-3 mb-4" >suggested for you</h2>
-              <SearchBar/>
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-              <Bubble userType="student" />
-            </div>
-
-            <div className="col-3 rightSide">
-              <h1 className="text-center calTitle">Calendar</h1>
-                <CalTab/>
-            </div>
-          </div>
-        )}
+        <div className="col-3 rightSide">
+          <h1 className="text-center calTitle">Calendar</h1>
+          <CalTab />
+        </div>
       </div>
-    );
-  }
+      <div className="row">
+        <div className="col-12">
+          <PostButton />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Main;

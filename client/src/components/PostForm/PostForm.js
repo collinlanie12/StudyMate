@@ -26,7 +26,7 @@ function PostForm() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link)
+        API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link, auth.user.id)
             .then(response => response.data)
             .then(user => console.log(user))
             .catch(err => console.log(err.message));
@@ -39,7 +39,7 @@ function PostForm() {
             <div className='row'>
                 <div className='col-12'>
                     <form onSubmit={handleFormSubmit}>
-                        <div className='form-group mt-5'>
+                        <div className='form-group'>
                             <label>What is the title of your post?</label>
                             <input className="form-control" type="text" placeholder="Post Title" name="title" value={title} onChange={e => setTitle(e.target.value)} />
                         </div>
@@ -63,7 +63,7 @@ function PostForm() {
                         </div>
                         <div className="form-group">
                         <label>What day are you hosting this event?</label>
-                        <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
+                        <input className="form-control" type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>What time is this event starting?</label>

@@ -14,11 +14,7 @@ postsController.post('/create', (req, res) => {
 
 //get all posts
 postsController.get("/all", (req, res) => {
-    db.Post.findAll({
-        include: [{
-            model: db.Subject
-        }]
-    }).then(result => {
+    db.Post.findAll({}).then(result => {
         res.json(result);
     });
 });

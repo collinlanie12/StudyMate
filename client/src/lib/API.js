@@ -25,6 +25,10 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    findUser: function (UserId) {
+      return axios.get(`/api/users/${UserId}`);
     }
   },
 
@@ -37,8 +41,8 @@ export default {
       });
     },
 
-    create: function (authToken, title, content, time, SubjectId, date, link) {
-      return axios.post('/api/posts/create', { title, content, time, SubjectId, date, link }, {
+    create: function (authToken, title, content, time, SubjectId, date, link, UserId) {
+      return axios.post('/api/posts/create', { title, content, time, SubjectId, date, link, UserId }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
@@ -57,6 +61,9 @@ export default {
   Subjects: {
     getAll: function () {
       return axios.get("api/subjects/");
+    },
+    findSubject: function (SubjectId) {
+      return axios.get(`/api/subjects/${SubjectId}`);
     }
   },
 
