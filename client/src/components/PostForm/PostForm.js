@@ -1,17 +1,19 @@
 import React, { useEffect, useState, useContext } from 'react';
 import API from '../../lib/API';
 import AuthContext from "../../contexts/AuthContext";
+import PostContext from "../../contexts/PostContext";
 
 function PostForm() {
     const auth = useContext(AuthContext);
+    const Post = useContext(PostContext);
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [link, setLink] = useState("");
     const [date, setDate] = useState("");
-    const [time, setTime] = useState();
+    const [time, setTime] = useState(12);
     const [subjects, setSubjects] = useState([]);
-    const [selectedSubject, setSelectedSubject] = useState();
+    const [selectedSubject, setSelectedSubject] = useState(1);
 
     useEffect(() => {
         API.Subjects.getAll(auth.authToken)
@@ -29,9 +31,15 @@ function PostForm() {
         API.Posts.create(auth.authToken, title, content, time, selectedSubject, date, link, auth.user.id)
             .then(response => response.data)
             .then(user => console.log(user))
+            .then(phil => {
+                if (Post.submitted === false) {
+                    Post.onPostSubmit(true)
+                } else {
+                    Post.onPostSubmit(false)
+                };
+            }
+            )
             .catch(err => console.log(err.message));
-
-        alert("Your post has been created!");
     };
 
     return (

@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import API from '../../lib/API';
 import TokenStore from '../../lib/TokenStore';
 import AuthContext from '../../contexts/AuthContext';
+import PostContext from "../../contexts/PostContext";
 import Navigation from '../../components/Navigation/Navigation';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import Home from '../../pages/Home/Home';
@@ -29,12 +30,20 @@ class App extends Component {
       this.setState(prevState => ({ auth: { ...prevState.auth, user: undefined, authToken: undefined } }));
     }
 
+    this.handleSubmit = (bool) => {
+      this.setState(prevState => ({ postSub: { ...prevState.postSub, submitted: bool } }));
+    }
+
     this.state = {
       auth: {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
         onLogout: this.handleLogout
+      },
+      postSub: {
+        submitted: undefined,
+        onPostSubmit: this.handleSubmit
       }
     }
   }
@@ -60,7 +69,9 @@ class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <PrivateRoute path='/user-settings' component={UserSettings} />
-              <PrivateRoute path='/main' component={Main} />
+              <PostContext.Provider value={this.state.postSub}>
+                <PrivateRoute path='/main' component={Main} />
+              </PostContext.Provider>
               <Route component={NotFound} />
             </Switch>
           </div>

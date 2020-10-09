@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
 import PostButton from "../../components/PostButton/PostButton"
-
+import PostContext from "../../contexts/PostContext";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 import { InputGroup, FormControl, Button } from "react-bootstrap"
@@ -11,7 +11,7 @@ import { InputGroup, FormControl, Button } from "react-bootstrap"
 
 function Main() {
   const auth = useContext(AuthContext);
-
+  const postCon = useContext(PostContext);
 
   const [posts, setPosts] = useState([]);
 
@@ -21,7 +21,7 @@ function Main() {
         console.log(response.data);
         setPosts(response.data);
       })
-  }, []);
+  }, [postCon.submitted]);
 
   return (
     <div>
@@ -59,7 +59,7 @@ function Main() {
       </div>
       <div className="row">
         <div className="col-12">
-        <PostButton />
+          <PostButton />
         </div>
       </div>
     </div>
