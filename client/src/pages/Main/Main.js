@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
+import PostButton from "../../components/PostButton/PostButton"
 
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
@@ -54,6 +55,11 @@ function Main() {
         <div className="col-3 rightSide">
           <h1 className="text-center calTitle">Calendar</h1>
           <CalTab />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
+        <PostButton />
         </div>
       </div>
     </div>
