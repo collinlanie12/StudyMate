@@ -1,5 +1,6 @@
 import React from "react";
 import Notifications from "react-notifications-menu";
+import bell from "../../assets/images/notification-bell-image.png"
 
  const data = [
        {
@@ -14,7 +15,7 @@ import Notifications from "react-notifications-menu";
 const NotificationBell = () => {
    
     return  <Notifications data={data} 
-        
+    icon={bell}
     />
 };
 

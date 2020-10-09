@@ -31,8 +31,9 @@ class Navigation extends Component {
       <div className="Navigation sticky-top">
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark tealAndPurple mb-3">
           <span className="navbar-brand">
-            StudyMate
-          </span>
+            <span className="s">S</span>
+            tudy<span className="m">M</span>ate
+            </span>
           <button
             className={togglerClass}
             onClick={this.toggleCollapse}
@@ -64,12 +65,13 @@ class Navigation extends Component {
                 </li>
               )}
             </ul>
-                
+
             <ul className="navbar-nav">
               {/* =================================================Notification Bell============================================= */}
 
-
-                <NotificationBell/>
+              <div className="mt-3">
+                <NotificationBell />
+              </div>
 
 
               {/* Drop Down user email and logout */}
@@ -77,16 +79,16 @@ class Navigation extends Component {
               {user ? (
                 <AuthDropdown onClick={this.toggleCollapse} />
               ) : (
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="/login"
-                    onClick={this.toggleCollapse}
-                  >
-                    Login/Register
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/login"
+                      onClick={this.toggleCollapse}
+                    >
+                      Login/Register
                   </Link>
-                </li>
-              )}
+                  </li>
+                )}
             </ul>
           </div>
         </nav>
