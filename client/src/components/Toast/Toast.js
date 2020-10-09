@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Col, Toast } from "react-bootstrap";
 import API from "../../lib/API";
 
+import "./Toast.css";
+
+
 function Bubble(props) {
   let time;
 
@@ -100,6 +103,7 @@ function Bubble(props) {
         onClose={toggleShowB}
         show={showB}
         animation={false}
+        style= {{minWidth: "335px"}}
       >
         <Toast.Header>
           <img

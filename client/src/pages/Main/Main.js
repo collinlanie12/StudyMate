@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
-import PostButton from "../../components/PostButton/PostButton"
+import PostButton from "../../components/PostButton/PostButton";
 import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
-
+import Navigation from "../../components/Navigation/Navigation";
 
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
@@ -18,15 +18,17 @@ function Main() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    API.Posts.getAll(auth.authToken)
-      .then(response => {
-        console.log(response.data);
-        setPosts(response.data);
-      })
+    API.Posts.getAll(auth.authToken).then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
   }, [postCon.submitted]);
 
   return (
     <div>
+    <Navigation />
+    <div className="container-fluid">
+      
       <div className="row">
         <div className="col-3 leftSide">
           <SideNav />
@@ -58,6 +60,7 @@ function Main() {
           <PostButton />
         </div>
       </div>
+    </div>
     </div>
   );
 }
