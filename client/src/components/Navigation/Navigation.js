@@ -30,10 +30,10 @@ class Navigation extends Component {
     return (
       <div className="Navigation sticky-top">
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark tealAndPurple mb-3">
-          <span className="navbar-brand">
+        <span className="navbar-brand">
             <span className="s">S</span>
             tudy<span className="m">M</span>ate
-            </span>
+          </span>
           <button
             className={togglerClass}
             onClick={this.toggleCollapse}

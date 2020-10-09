@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from "react-animate-on-scroll";
+import "./Home.css";
 
 import logo from "../../assets/images/StudyMate-Logo.png";
 
@@ -29,12 +30,9 @@ class HomePage extends Component {
   render() {
     return (
       <div className="Home">
-
         <div class="bgimg-1">
           <div class="caption">
-            <div
-              className="banner-cont"
-            >
+            <div className="banner-cont">
               Big Ideas,
               <br />
               Creative People,
@@ -45,30 +43,37 @@ class HomePage extends Component {
         </div>
 
         <div style={bigDiv} className="studyMateBio">
-        <ScrollAnimation animateIn='bounceInRight'>
-          <img  src={logo} alt='logo' className='mb-5 SMTitle' style={{left: '100px', maxWidth: "700px"}} />
+          <ScrollAnimation animateIn="bounceInRight">
+            <img
+              src={logo}
+              alt="logo"
+              className="mb-5 SMTitle"
+              style={{ left: "100px", maxWidth: "700px" }}
+            />
           </ScrollAnimation>
-            <p>
-              Welcome to StudyMate! StudyMate is a web application that allows students to meet 
-              and study subjects together. Students can sign up to our site and fill out their profile 
-              with information such as their major, current classes, what subject they are most proficient 
-              in, what university they attend, and a brief bio about themselves.
-            </p>
+          <p>
+            Welcome to StudyMate! StudyMate is a web application that allows
+            students to meet and study subjects together. Students can sign up
+            to our site and fill out their profile with information such as
+            their major, current classes, what subject they are most proficient
+            in, what university they attend, and a brief bio about themselves.
+          </p>
         </div>
-
 
         <div style={{ position: "relative" }}>
           <div style={text}>
-          <h3 className="intro" style={{ textAlign: "center" }}>
-            Meet the team
-          </h3>
+            <h3 className="intro" style={{ textAlign: "center" }}>
+              Meet the team
+            </h3>
           </div>
-          <div className="">
-
+          <div className="row container-fluid">
+            <div className="col-3">
+              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
+              <br/>
+              <p> </p>
+            </div>
           </div>
-
         </div>
-
       </div>
     );
   }

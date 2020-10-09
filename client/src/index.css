@@ -16,7 +16,7 @@ code {
 
 
 
-/* =====================================================================navbar================================================ */
+/* =====================================================================navbar================================================================== */
 
 .dropdown{
   color:red!important;
@@ -52,94 +52,3 @@ code {
 }
 
 
-
-/* =====================================================================HomePage======================================================== */
-
-
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-
-.bgimg-1 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 730px;
-}
-
-.bgimg-2 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  background-image: url("./assets/images/splash.jpg");
-  min-height: 400px;
-}
-
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
-
-.intro {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
-}
-
-.banner-cont {
-  float: left;
-  width: 100%;
-  text-align: right;
-  margin: -250px -45px 0;
-  font-size: 106px;
-  color: rgba(255, 255, 255, 0.842);
-  /* line-height: 90px; */
-}
-
-.banner-cont {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.studyMateBio{
-  text-align: center;
-  border-top: solid 5px #bf3cda;
-}
-
-.banner-cont { 
-  animation: fadeInAnimation ease 4.5s; 
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
-} 
-
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-  } 
-}
