@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScrollAnimation from 'react-animate-on-scroll';
+import "./Home.css"
 
 import logo from "../../assets/images/StudyMate-Logo.png";
 
