@@ -5,6 +5,7 @@ import API from '../../lib/API';
 import TokenStore from '../../lib/TokenStore';
 import AuthContext from '../../contexts/AuthContext';
 import PostContext from "../../contexts/PostContext";
+import ModalContext from "../../contexts/ModalContext";
 import Navigation from '../../components/Navigation/Navigation';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import Home from '../../pages/Home/Home';
@@ -34,6 +35,14 @@ class App extends Component {
       this.setState(prevState => ({ postSub: { ...prevState.postSub, submitted: bool } }));
     }
 
+    this.handleClose = (bool) => {
+      this.setState(prevState => ({ modal: { ...prevState.modal, showCon: bool } }));
+    }
+
+    this.afterClose = (loob) => {
+      this.setState(prevState => ({ modal: { ...prevState.modal, showCon: loob } }));
+    }
+
     this.state = {
       auth: {
         user: undefined,
@@ -44,6 +53,11 @@ class App extends Component {
       postSub: {
         submitted: undefined,
         onPostSubmit: this.handleSubmit
+      },
+      modal: {
+        showCon: undefined,
+        handleClose: this.handleClose,
+        afterClose: this.afterClose
       }
     }
   }
@@ -69,9 +83,11 @@ class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <PrivateRoute path='/user-settings' component={UserSettings} />
-              <PostContext.Provider value={this.state.postSub}>
-                <PrivateRoute path='/main' component={Main} />
-              </PostContext.Provider>
+              <ModalContext.Provider value={this.state.modal}>
+                <PostContext.Provider value={this.state.postSub}>
+                  <PrivateRoute path='/main' component={Main} />
+                </PostContext.Provider>
+              </ModalContext.Provider>
               <Route component={NotFound} />
             </Switch>
           </div>

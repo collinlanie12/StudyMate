@@ -1,17 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import PostForm from "../PostForm/PostForm";
 import API from "../../lib/API";
+import ModalCon from "../../contexts/ModalContext";
 
 function PostButton() {
+    const modalCon = useContext(ModalCon);
+
     const [show, setShow] = useState(false);
 
+    useEffect(() => {
+        handleClick();
+    }, [modalCon.showCon]);
+
+    const handleClick = () => {
+        if (modalCon.showCon === false) {
+            handleClose();
+            modalCon.afterClose(undefined);
+        } else {
+            handleClose();
+        }
+    };
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return (
+
         <>
-            <Button variant="info" onClick={handleShow} style={{ position: "fixed", bottom: "50px", right: "600px",}}>
+            <Button variant="info" onClick={handleShow} style={{ position: "fixed", bottom: "5%", right: "25%",}}>
                 New Post
             </Button>
 

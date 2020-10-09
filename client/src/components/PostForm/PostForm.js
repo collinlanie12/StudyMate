@@ -2,10 +2,12 @@ import React, { useEffect, useState, useContext } from 'react';
 import API from '../../lib/API';
 import AuthContext from "../../contexts/AuthContext";
 import PostContext from "../../contexts/PostContext";
+import ModalCon from "../../contexts/ModalContext";
 
 function PostForm() {
     const auth = useContext(AuthContext);
     const Post = useContext(PostContext);
+    const modalCon = useContext(ModalCon);
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -38,7 +40,9 @@ function PostForm() {
                     Post.onPostSubmit(false)
                 };
             }
-            )
+            ).then(flundy => {
+                modalCon.handleClose(false);
+            })
             .catch(err => console.log(err.message));
     };
 
