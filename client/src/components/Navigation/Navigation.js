@@ -4,6 +4,8 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 import AuthContext from "../../contexts/AuthContext";
 import AuthDropdown from "../../components/AuthDropdown/AuthDropdown";
+import NotificationBell from "../NotificationBell/NotificationBell";
+
 import "./Navigation.css";
 
 class Navigation extends Component {
@@ -66,13 +68,10 @@ class Navigation extends Component {
             <ul className="navbar-nav">
               {/* =================================================Notification Bell============================================= */}
 
-              <li className="notification">
-                <span className="badge mt-1">3</span>
-                <i
-                  className="fa fa-bell mr-3 mt-2"
-                  style={{ fontSize: "30px", color: "white" }}
-                ></i>
-              </li>
+
+                <NotificationBell/>
+
+
               {/* Drop Down user email and logout */}
 
               {user ? (
