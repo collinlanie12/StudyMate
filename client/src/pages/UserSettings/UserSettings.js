@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import API from '../../lib/API';
 import DefaultProfile from "../../assets/images/default-profile-picture.png";
 import AuthContext from "../../contexts/AuthContext";
+import Navigation from "../../components/Navigation/Navigation";
+
 
 function UserSettings() {
     const auth = useContext(AuthContext);
@@ -54,6 +56,8 @@ function UserSettings() {
     }
 
     return (
+    <div>
+    <Navigation/>
         <div className='container'>
             <div className='row'>
                 <div className='col-12'>
@@ -122,6 +126,7 @@ function UserSettings() {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 

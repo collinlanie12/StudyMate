@@ -1,48 +1,59 @@
 .teal {
-  background-color: #14cbba;
+  background-color: #06721e;
 }
 
 .purple {
-  background-color: #753b92;
+  background-color: #393476;
 }
 
 .tealAndPurple {
-  background-image: linear-gradient(to bottom right, #14cbba, #753b92);
+  background-image: linear-gradient(to bottom right, #393476, #06721e);
 }
 
+.notification .badge {
+  position: absolute;
+  top: -6px !important;
+  right: -2px !important;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
 
+.notification {
+  color: white;
+  text-decoration: none;
+  padding: 1px 1px;
+  position: relative;
+  display: inline-block;
+  border-radius: 1px;
+}
 
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+
+.s {
+  color: #06721e;
+}
+
+.m {
+  color: #06721e;
+}
 
 /* ================================================================bell========================================================== */
 
-.notification .badge {
-    position: absolute;
-    top: -6px!important;
-    right: -2px !important;
-    padding: 5px 10px;
-    border-radius: 50%;
-    background: red;
-    color: white;
-  }
-
-  .notification {
-    color: white;
-    text-decoration: none;
-    padding: 1px 1px;
-    position: relative;
-    display: inline-block;
-    border-radius: 1px;
-  }
-
-  
-
 .dropdown {
-  display:inline-block;
-  margin-left:20px;
-  padding:10px;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px;
 }
 
-.dropdown-menu{
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #17a2b8;
+}
+.dropdown-menu {
   top: 60px;
   right: 0px;
   left: unset;
@@ -51,18 +62,42 @@
   padding-bottom: 0px;
   padding: 0px;
 }
-
-.head{
-  padding:5px 15px;
+.dropdown-menu:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 12px;
+  border: 10px solid #343a40;
+  border-color: transparent transparent #343a40 transparent;
+}
+.head {
+  padding: 5px 15px;
   border-radius: 3px 3px 0px 0px;
 }
-.footer{
-  padding:5px 15px;
-  border-radius: 0px 0px 3px 3px; 
+.footer {
+  padding: 5px 15px;
+  border-radius: 0px 0px 3px 3px;
 }
-.notification-box{
-  padding: 10px 0px; 
+.notification-box {
+  padding: 10px 0px;
 }
-.bg-gray{
+.bg-gray {
   background-color: #eee;
+}
+@media (max-width: 640px) {
+  .dropdown-menu {
+    top: 50px;
+    left: -16px;
+    width: 290px;
+  }
+  .nav {
+    display: block;
+  }
+  .nav .nav-item,
+  .nav .nav-item a {
+    padding-left: 0px;
+  }
+  .message {
+    font-size: 13px;
+  }
 }

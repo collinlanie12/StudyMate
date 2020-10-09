@@ -15,7 +15,7 @@ function Attendance(props) {
     }, [props.id]);
 
     return (
-        <Card style={{ width: '18rem', display: props.isShowing ? "block" : "none" }}>
+        <Card style={{ width: '18rem', display: props.isShowing ? "inline-block" : "none" }}>
             <ListGroup variant="flush">
             <ListGroup.Item><strong>Attendance</strong></ListGroup.Item>
             {signups.map(username => <ListGroup.Item>{username}</ListGroup.Item>)}

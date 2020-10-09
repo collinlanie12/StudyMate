@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { InputGroup, FormControl, Button } from "react-bootstrap";
-
 import AuthContext from "../../contexts/AuthContext";
 import AuthDropdown from "../../components/AuthDropdown/AuthDropdown";
-import NotificationBell from "../NotificationBell/NotificationBell";
 
-import "./Navigation.css";
+import "./PreNavigation.css";
 
-class Navigation extends Component {
+class PreNavigation extends Component {
   static contextType = AuthContext;
 
   state = {
@@ -30,7 +27,7 @@ class Navigation extends Component {
     return (
       <div className="Navigation sticky-top">
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark tealAndPurple mb-3">
-        <span className="navbar-brand">
+          <span className="navbar-brand">
             <span className="s">S</span>
             tudy<span className="m">M</span>ate
           </span>
@@ -48,30 +45,11 @@ class Navigation extends Component {
 
           <div className={targetClass} id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/" onClick={this.toggleCollapse}>
-                  Home
-                </Link>
-              </li>
-              {user && (
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="/main"
-                    onClick={this.toggleCollapse}
-                  >
-                    Main
-                  </Link>
-                </li>
-              )}
-            </ul>
 
+            </ul>
+                
             <ul className="navbar-nav">
               {/* =================================================Notification Bell============================================= */}
-
-              <div className="mt-3">
-                <NotificationBell />
-              </div>
 
 
               {/* Drop Down user email and logout */}
@@ -79,16 +57,16 @@ class Navigation extends Component {
               {user ? (
                 <AuthDropdown onClick={this.toggleCollapse} />
               ) : (
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="/login"
-                      onClick={this.toggleCollapse}
-                    >
-                      Login/Register
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to="/login"
+                    onClick={this.toggleCollapse}
+                  >
+                    Login/Register
                   </Link>
-                  </li>
-                )}
+                </li>
+              )}
             </ul>
           </div>
         </nav>
@@ -97,4 +75,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default PreNavigation;
