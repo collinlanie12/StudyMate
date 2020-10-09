@@ -11,8 +11,8 @@ function PostButton() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} style={{ position: "fixed", bottom: "50px", right: "500px",}}>
-                CLICK ME
+            <Button variant="info" onClick={handleShow} style={{ position: "fixed", bottom: "50px", right: "600px",}}>
+                New Post
             </Button>
 
             <Modal show={show} onHide={handleClose}>
