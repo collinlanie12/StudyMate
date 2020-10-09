@@ -185,7 +185,7 @@ span.crud:hover {
   text-align: right;
   margin: -250px -45px 0;
   font-size: 106px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.842);
   /* line-height: 90px; */
 }
 
@@ -195,7 +195,7 @@ span.crud:hover {
 
 
 
-.SMTitle { 
+.banner-cont { 
   animation: fadeInAnimation ease 4.5s; 
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 

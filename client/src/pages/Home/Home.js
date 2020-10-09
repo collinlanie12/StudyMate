@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import logo from "../../assets/images/StudyMate-Logo.png";
 
@@ -43,8 +44,10 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <div style={bigDiv}>
-          <img src={logo} alt='logo' className='mb-5 SMTitle' style={{left: '100px', maxWidth: "700px"}} />
+        <div style={bigDiv} >
+        <ScrollAnimation animateIn='bounceInRight'>
+          <img  src={logo} alt='logo' className='mb-5 SMTitle' style={{left: '100px', maxWidth: "700px"}} />
+          </ScrollAnimation>
             <p>
               Welcome to StudyMate! StudyMate is a web application that allows students to meet 
               and study subjects together. Students can sign up to our site and fill out their profile 
