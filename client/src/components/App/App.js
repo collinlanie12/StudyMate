@@ -6,7 +6,6 @@ import TokenStore from '../../lib/TokenStore';
 import AuthContext from '../../contexts/AuthContext';
 import PostContext from "../../contexts/PostContext";
 import ModalContext from "../../contexts/ModalContext";
-import Navigation from '../../components/Navigation/Navigation';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';

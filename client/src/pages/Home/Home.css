@@ -62,6 +62,9 @@
 .studyMateBio {
   text-align: center;
   border-top: solid 6px #393476;
+  background-color: #ccbeac !important;
+  color: rgb(0, 0, 0) !important;
+  font-size: large;
 }
 
 .banner-cont {
@@ -82,4 +85,9 @@
 .teamImg {
   border-radius: 50%;
   max-width: 50%;
+}
+
+.theIdea{
+    background-color: #393476;
+    height: 500px;
 }
