@@ -7,35 +7,12 @@
 }
 
 .tealAndPurple {
-  background-image: linear-gradient(to bottom right, #393476, #06721E);
+  background-image: linear-gradient(to bottom right, #393476);
 }
 
-
-.notification .badge {
-    position: absolute;
-    top: -6px!important;
-    right: -2px !important;
-    padding: 5px 10px;
-    border-radius: 50%;
-    background: red;
-    color: white;
-  }
-
-  .notification {
-    color: white;
-    text-decoration: none;
-    padding: 1px 1px;
-    position: relative;
-    display: inline-block;
-    border-radius: 1px;
-  }
-  
-  .navbar-brand{
-    font-family: 'Montserrat', sans-serif;
-  }
-
-
-
+.navbar-brand{
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* ================================================================bell========================================================== */
 

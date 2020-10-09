@@ -44,7 +44,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <div style={bigDiv} >
+        <div style={bigDiv} className="studyMateBio">
         <ScrollAnimation animateIn='bounceInRight'>
           <img  src={logo} alt='logo' className='mb-5 SMTitle' style={{left: '100px', maxWidth: "700px"}} />
           </ScrollAnimation>
@@ -56,11 +56,6 @@ class HomePage extends Component {
             </p>
         </div>
 
-        <div class="bgimg-2">
-          <div class="caption">
-
-          </div>
-        </div>
 
         <div style={{ position: "relative" }}>
           <div style={text}>
@@ -68,13 +63,12 @@ class HomePage extends Component {
             Meet the team
           </h3>
           </div>
+          <div className="">
+
+          </div>
+
         </div>
 
-        <div class="bgimg-1">
-          <div class="caption">
-            <span class="border">COOL!</span>
-          </div>
-        </div>
       </div>
     );
   }
