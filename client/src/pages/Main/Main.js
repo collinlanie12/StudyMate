@@ -12,6 +12,8 @@ import AuthContext from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap"
 import Attendance from "../../components/Attendance/Attendance";
 
+import "./Main.css"
+
 
 function Main() {
   const auth = useContext(AuthContext);
@@ -63,14 +65,15 @@ function Main() {
       <div className="container-fluid">
 
         <div className="row">
-          <div className="col-3 leftSide">
-            <SideNav />
-            <br />
+          <div className="col-3">
+          <div className="leftSide">
+            {/* <SideNav /> */}
             <Attendance isShowing={showAttendance} id={attendanceId} />
+            </div>
           </div>
 
           <div className="text-center col-6 middleRow">
-            <h2 className="mt-3 mb-4">suggested for you</h2>
+            <h1 className="mt-4 mb-4 title">suggested for you <i className="fa fa-book" aria-hidden="true"></i></h1>
             <SearchBar />
             {posts.map(post => (
               <Bubble userType="student" id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
@@ -79,7 +82,7 @@ function Main() {
           </div>
 
           <div className="col-3 rightSide">
-            <h1 className="text-center calTitle">Calendar</h1>
+            <h1 className="text-center title">Calendar <i className="fa fa-calendar" aria-hidden="true"></i></h1>
             <CalTab />
           </div>
         </div>
