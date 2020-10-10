@@ -7,7 +7,6 @@ import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
 import Navigation from "../../components/Navigation/Navigation";
-
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap"
@@ -28,12 +27,12 @@ function Main() {
   const [posts, setPosts] = useState([]);
   const [isScroll, setIsScroll] = useState(false);
 
-  
+
   const handleScroll = () => {
-    const timer = setTimeout(()=> {
+    const timer = setTimeout(() => {
       setIsScroll(true);
     }, 10000);
-    return() => clearTimeout(timer);
+    return () => clearTimeout(timer);
   };
 
   const handleRefresh = () => {
