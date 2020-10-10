@@ -1,6 +1,5 @@
 const postsController = require('express').Router();
 const { JWTVerifier } = require('../../lib/passport');
-
 const db = require('../../models');
 
 //create a post
@@ -8,7 +7,17 @@ postsController.post('/create', (req, res) => {
     const { title, content, time, date, link, SubjectId, UserId } = req.body;
 
     db.Post.create({ title, content, time, date, link, SubjectId, UserId })
-        .then(post => res.json(post))
+        .then(post => {
+            let Pusher = require('pusher');
+            let pusher = new Pusher({
+                appId: process.env.PUSHER_APP_ID,
+                key: process.env.PUSHER_APP_KEY,
+                secret: process.env.PUSHER_APP_SECRET,
+                cluster: process.env.PUSHER_APP_CLUSTER
+            });
+            pusher.trigger('notifications', 'post_added', post, req.headers['x-socket-id']);
+            res.json(post);
+        })
         .catch(err => res.json(err));
 });
 
@@ -39,7 +48,6 @@ postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
                 return res.sendStatus(404);
             }
             return result.getUsers()
-            
         })
         .then(data => {
             let usernameArr = [];

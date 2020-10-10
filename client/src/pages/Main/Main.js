@@ -7,10 +7,8 @@ import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
 import Navigation from "../../components/Navigation/Navigation";
-
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
-import { InputGroup, FormControl, Button } from "react-bootstrap"
 import Attendance from "../../components/Attendance/Attendance";
 
 
