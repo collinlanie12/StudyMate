@@ -13,14 +13,6 @@ code {
 }
 
 
-
-/* =====================================================================navbar================================================================== */
-
-.dropdown{
-  color:red!important;
-}
-
-
 /* ===================================================================Left side Nav================================================================= */
 
 .sidenav {
@@ -39,14 +31,13 @@ code {
   padding: 6px 6px 6px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #4bcbd4;
+  color: #393476;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #000000;
-  background-color: #bf3cda;
-  opacity: 30%;
+  color: #06721E;
+
 }
 
 
