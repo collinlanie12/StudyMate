@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
+import PreNavigation from "../../components/PreNavigation/PreNavigation";
 import "./Home.css";
 
 import logo from "../../assets/images/StudyMate-Logo.png";
@@ -30,6 +31,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="Home">
+        <PreNavigation className="Nav" />
         <div class="bgimg-1">
           <div class="caption">
             <div className="banner-cont">
@@ -43,9 +45,7 @@ class HomePage extends Component {
         </div>
 
         <div style={bigDiv} className="studyMateBio">
-          <ScrollAnimation 
-          animateIn="animate__fadeInRight"
-          animateOnce="true">
+          <ScrollAnimation animateIn="fadeIn" animateOnce="true">
             <img
               src={logo}
               alt="logo"
@@ -70,43 +70,77 @@ class HomePage extends Component {
           </div>
           <div className="row container-fluid">
             <div className="col-3">
-              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
-              <br/>
+              <img
+                className="teamImg m-5"
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="soleman"
+              />
+              <br />
               <h3>Collin Lanier</h3>
-              <p>A boy Genius born and raised on Mars, he moved to earth when he found out that 
-              we had video games and wifi. </p>
+              <p>
+                A boy Genius born and raised on Mars, he moved to earth when he
+                found out that we had video games and wifi.
+              </p>
             </div>
 
             <div className="col-3">
-              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
-              <br/>
+              <img
+                className="teamImg m-5"
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="soleman"
+              />
+              <br />
               <h3>Gino Zaccardelli</h3>
-              <p>A bank robber, Casino Manager, Boxer and professional gamer in a past life,
-               moved to Charlotte for the soul purpose of "Cleveland was TRASH" </p>
+              <p>
+                A bank robber, Casino Manager, Boxer and professional gamer in a
+                past life, moved to Charlotte for the soul purpose of "Cleveland
+                was TRASH"
+              </p>
             </div>
 
             <div className="col-3">
-              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
-              <br/>
+              <img
+                className="teamImg m-5"
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="soleman"
+              />
+              <br />
               <h3>Jordan Triplett</h3>
-              <p>An artist in every sense of the word but also a wizard on front and back end 
-              coding. Uses both sides of his brain to the point that people are convinced he stole 
-              it from a lab. </p>
+              <p>
+                An artist in every sense of the word but also a wizard on front
+                and back end coding. Uses both sides of his brain to the point
+                that people are convinced he stole it from a lab.
+              </p>
             </div>
 
             <div className="col-3">
-              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
-              <br/>
+              <img
+                className="teamImg m-5"
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="soleman"
+              />
+              <br />
               <h3>Soleman Sayeed</h3>
               <p>Some dude that wanted his picture next to 3 of the greats. </p>
             </div>
           </div>
         </div>
 
-        <div className="theIdea">
-
+        <div className="theIdea text-center">
+          <div className="container">
+            <h3 className="ideaTitle">
+              
+              <strong>The Big Idea</strong>
+            </h3>
+            <p>
+              
+              The idea for StudyMate originated from the four creators being in
+              a university class together online and realizing the difficulty of
+              forming a study group online without physically seeing the people
+              in your classroom.
+            </p>
+          </div>
         </div>
-
       </div>
     );
   }
