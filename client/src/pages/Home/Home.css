@@ -1,5 +1,4 @@
-
-.nav{
+.nav {
   margin-bottom: 0px !important;
 }
 
@@ -15,7 +14,7 @@
 
 .bgimg-1 {
   background-image: url("../../assets/images/splash.jpg");
-  min-height: 730px;
+  min-height: 650px;
 }
 
 .caption {
@@ -64,7 +63,8 @@
 .studyMateBio {
   text-align: center;
   border-top: solid 6px #393476;
-  background-color: #ccbeac !important;
+  background-image: url("../../assets/images/background.png");
+  /* background-color: #ccbeac !important; */
   color: rgb(0, 0, 0) !important;
   font-size: large;
 }
@@ -89,7 +89,21 @@
   max-width: 50%;
 }
 
-.theIdea{
-    background-color: #393476;
-    height: 500px;
+.theIdea {
+  background-color: #605c91;
+  height: 500px;
+  border-top: solid 6px #06721e;
+}
+
+.ideaTitle {
+  margin-top: 30px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 25px "Lato", sans-serif;
+  color: whitesmoke;
+}
+
+.theIdea p{
+color: whitesmoke;
+font-size: 17px;
 }
