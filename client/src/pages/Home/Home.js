@@ -27,6 +27,12 @@ const bigDiv = {
   textAlign: "justify",
 };
 
+const idea = {
+  width: "375px",
+  height: "325px",
+  margin: "10px",
+};
+
 class HomePage extends Component {
   render() {
     return (
@@ -129,18 +135,45 @@ class HomePage extends Component {
         <div className="theIdea text-center">
           <div className="container">
             <h3 className="ideaTitle">
-              
               <strong>The Big Idea</strong>
             </h3>
             <p>
-              
               The idea for StudyMate originated from the four creators being in
               a university class together online and realizing the difficulty of
               forming a study group online without physically seeing the people
               in your classroom.
             </p>
           </div>
+
+          <img
+            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
+            style={idea}
+          />
+          <img
+            src="https://www.exaltus.ca/wp-content/uploads/2018/10/social-why-whiteboard_Feature.png"
+            style={idea}
+          />
+          <img
+            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
+            style={idea}
+          />
+
+          <img
+            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
+            style={idea}
+          />
+          <img
+            src="https://www.exaltus.ca/wp-content/uploads/2018/10/social-why-whiteboard_Feature.png"
+            style={idea}
+          />
+          <img
+            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
+            style={idea}
+          />
         </div>
+
+
+
       </div>
     );
   }

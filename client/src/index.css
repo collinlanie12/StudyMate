@@ -15,14 +15,13 @@ code {
 
 /* ===================================================================Left side Nav================================================================= */
 
-.sidenav {
+.leftSide {
   height: 100%;
   width: 23%;
   position: fixed;
   z-index: 1;
   top: 10;
   left: 0;
-  /* background-color: #343a40; */
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -39,5 +38,3 @@ code {
   color: #06721E;
 
 }
-
-
