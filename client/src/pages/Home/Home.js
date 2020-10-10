@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import PreNavigation from "../../components/PreNavigation/PreNavigation";
 import "./Home.css";
+import "./Home.scss";
 
 import logo from "../../assets/images/StudyMate-Logo.png";
 
@@ -75,59 +76,53 @@ class HomePage extends Component {
             </h3>
           </div>
           <div className="row container-fluid">
-            <div className="col-3">
-              <img
-                className="teamImg m-5"
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="soleman"
-              />
-              <br />
-              <h3>Collin Lanier</h3>
-              <p>
-                A boy Genius born and raised on Mars, he moved to earth when he
-                found out that we had video games and wifi.
-              </p>
-            </div>
-
-            <div className="col-3">
-              <img
-                className="teamImg m-5"
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="soleman"
-              />
-              <br />
-              <h3>Gino Zaccardelli</h3>
-              <p>
-                A bank robber, Casino Manager, Boxer and professional gamer in a
-                past life, moved to Charlotte for the soul purpose of "Cleveland
-                was TRASH"
-              </p>
-            </div>
-
-            <div className="col-3">
-              <img
-                className="teamImg m-5"
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="soleman"
-              />
-              <br />
-              <h3>Jordan Triplett</h3>
-              <p>
+          <div className="col-3">
+              <div className="soleman">
+                <div class="solemanBadge">
+                  <div class="text">Jordan</div> <br />
+                </div>
+                <p className="solemanInfo">
                 An artist in every sense of the word but also a wizard on front
                 and back end coding. Uses both sides of his brain to the point
-                that people are convinced he stole it from a lab.
-              </p>
+                that people are convinced he stole it from a lab.</p>
+                <br />
+              </div>
             </div>
 
             <div className="col-3">
-              <img
-                className="teamImg m-5"
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="soleman"
-              />
-              <br />
-              <h3>Soleman Sayeed</h3>
-              <p>Some dude that wanted his picture next to 3 of the greats. </p>
+              <div className="gino">
+                <div class="ginoBadge">
+                  <div class="text">Gino</div> <br />
+                </div>
+                <p className="ginoInfo">
+                A bank robber, Casino Manager, Boxer and professional gamer in a
+                past life, moved to Charlotte for the soul purpose of "Cleveland
+                was TRASH"</p>
+                <br />
+              </div>
+            </div>
+
+            <div className="col-3">
+              <div className="collin">
+                <div class="collinBadge">
+                  <div class="text">Collin</div> <br />
+                </div>
+                <p className="collinInfo">
+                A boy Genius born and raised on Mars, he moved to earth when he
+                found out that we had video games and wifi.</p>
+                <br />
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="soleman">
+                <div class="solemanBadge">
+                  <div class="text">Soleman</div> <br />
+                </div>
+                <p className="solemanInfo">
+                  Some dude that wanted his picture next to 3 of the greats.{" "}
+                </p>
+                <br />
+              </div>
             </div>
           </div>
         </div>
@@ -145,35 +140,45 @@ class HomePage extends Component {
             </p>
           </div>
 
-          <img
-            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
-            style={idea}
-          />
-          <img
-            src="https://www.exaltus.ca/wp-content/uploads/2018/10/social-why-whiteboard_Feature.png"
-            style={idea}
-          />
-          <img
-            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
-            style={idea}
-          />
-
-          <img
-            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
-            style={idea}
-          />
-          <img
-            src="https://www.exaltus.ca/wp-content/uploads/2018/10/social-why-whiteboard_Feature.png"
-            style={idea}
-          />
-          <img
-            src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg"
-            style={idea}
-          />
+          <div class="tiles">
+            <a class="picTile" href="#">
+              <img src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg" />
+              <div class="details">
+                <span class="title">Lorem Ipsum Dolor</span>
+                <span class="info">
+                  Quisque vel felis lectus donec vitae dapibus magna
+                </span>
+              </div>
+            </a>
+            <a class="picTile" href="#">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/2.jpg" />
+              <div class="details">
+                <span class="title">Lorem Ipsum Dolor</span>
+                <span class="info">
+                  Quisque vel felis lectus donec vitae dapibus magna
+                </span>
+              </div>
+            </a>
+            <a class="picTile" href="#">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/3.jpg" />
+              <div class="details">
+                <span class="title">Lorem Ipsum Dolor</span>
+                <span class="info">
+                  Quisque vel felis lectus donec vitae dapibus magna
+                </span>
+              </div>
+            </a>
+            <a class="picTile" href="#">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/4.jpg" />
+              <div class="details">
+                <span class="title">Lorem Ipsum Dolor</span>
+                <span class="info">
+                  Quisque vel felis lectus donec vitae dapibus magna
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
-
-
-
       </div>
     );
   }
