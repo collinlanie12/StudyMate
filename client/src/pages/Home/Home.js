@@ -33,17 +33,19 @@ class HomePage extends Component {
         <div class="bgimg-1">
           <div class="caption">
             <div className="banner-cont">
-              Big Ideas,
+              Big Stank
               <br />
-              Creative People,
+              Stank People,
               <br />
-              New Technology.
+              New Stank.
             </div>
           </div>
         </div>
 
         <div style={bigDiv} className="studyMateBio">
-          <ScrollAnimation animateIn="bounceInRight">
+          <ScrollAnimation 
+          animateIn="animate__fadeInRight"
+          animateOnce="true">
             <img
               src={logo}
               alt="logo"
@@ -70,10 +72,41 @@ class HomePage extends Component {
             <div className="col-3">
               <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
               <br/>
-              <p> </p>
+              <h3>Collin Lanier</h3>
+              <p>A boy Genius born and raised on Mars, he moved to earth when he found out that 
+              we had video games and wifi. </p>
+            </div>
+
+            <div className="col-3">
+              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
+              <br/>
+              <h3>Gino Zaccardelli</h3>
+              <p>A bank robber, Casino Manager, Boxer and professional gamer in a past life,
+               moved to Charlotte for the soul purpose of "Cleveland was TRASH" </p>
+            </div>
+
+            <div className="col-3">
+              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
+              <br/>
+              <h3>Jordan Triplett</h3>
+              <p>An artist in every sense of the word but also a wizard on front and back end 
+              coding. Uses both sides of his brain to the point that people are convinced he stole 
+              it from a lab. </p>
+            </div>
+
+            <div className="col-3">
+              <img className="teamImg m-5" src="https://www.w3schools.com/howto/img_avatar.png" alt="soleman"/>
+              <br/>
+              <h3>Soleman Sayeed</h3>
+              <p>Some dude that wanted his picture next to 3 of the greats. </p>
             </div>
           </div>
         </div>
+
+        <div className="theIdea">
+
+        </div>
+
       </div>
     );
   }

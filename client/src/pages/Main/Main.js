@@ -11,9 +11,15 @@ import Navigation from "../../components/Navigation/Navigation";
 
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
+import { InputGroup, FormControl, Button } from "react-bootstrap"
+import Attendance from "../../components/Attendance/Attendance";
+
 
 function Main() {
   const auth = useContext(AuthContext);
+  const [showAttendance, setShowAttendance] = useState(false);
+  const [attendanceId, setAttendanceId] = useState();
+
   const postCon = useContext(PostContext);
 
   let showBtn;
@@ -47,6 +53,12 @@ function Main() {
     showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "none" }
   }
 
+  const handleAttendanceClick = (id) => {
+    console.log(id);
+    setShowAttendance(val => !val);
+    setAttendanceId(id);
+  }
+
   return (
     <div>
       <Navigation />
@@ -55,21 +67,16 @@ function Main() {
         <div className="row">
           <div className="col-3 leftSide">
             <SideNav />
+            <br />
+            <Attendance isShowing={showAttendance} id={attendanceId} />
           </div>
 
           <div className="text-center col-6 middleRow">
             <h2 className="mt-3 mb-4">suggested for you</h2>
             <SearchBar />
-            {posts.map((post) => (
-              <Bubble
-                userType="student"
-                subjectName={post.SubjectId}
-                content={post.content}
-                userName={post.UserId}
-                time={post.time}
-                title={post.title}
-                date={post.date}
-              />
+            {posts.map(post => (
+              <Bubble userType="student" id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
+                title={post.title} date={post.date} isShowingAttendance={showAttendance} onAttendanceClick={handleAttendanceClick} />
             ))}
           </div>
 
@@ -89,6 +96,6 @@ function Main() {
       </div>
     </div>
   );
-}
+};
 
 export default Main;
