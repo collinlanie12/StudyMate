@@ -1,17 +1,13 @@
-.teal {
-  background-color: #06721E;
-}
-
-.purple {
+.navbar{
   background-color: #393476;
-}
-
-.tealAndPurple {
-  background-image: linear-gradient(to bottom right, #393476);
 }
 
 .navbar-brand{
   font-family: 'Montserrat', sans-serif;
+}
+
+.links{
+  font-size: 1.3em;
 }
 
 .s{
@@ -80,4 +76,8 @@ color: #06721E;
     .message{
       font-size: 13px;
     }
+}
+
+.navbar{
+  margin: 0 !important;
 }

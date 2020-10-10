@@ -1,12 +1,16 @@
-.bgimg-1,
-.bgimg-2,
-.bgimg-3 {
+
+.nav{
+  margin-bottom: 0px !important;
+}
+
+.bgimg-1 {
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 0px;
 }
 
 .bgimg-1 {
@@ -38,9 +42,7 @@
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
-  .bgimg-1,
-  .bgimg-2,
-  .bgimg-3 {
+  .bgimg-1 {
     background-attachment: scroll;
   }
 }

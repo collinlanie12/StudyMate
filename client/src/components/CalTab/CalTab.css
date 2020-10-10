@@ -7,12 +7,13 @@ span.crud {
     padding: 0 0 0 40px;
     width: 0;
     border-radius: 8px 0px 0px 8px;
-    background-image: linear-gradient(to bottom right, #06721E, #393476);
+    background: linear-gradient(to right,  #06721E 20.5px, #18135c 82.5px, #18135c 82.5px, #18135c 82.5px);
     position: absolute;
-    color:rgb(235, 211, 211);
-    border: 6px #18135c solid;
+    color:rgb(255, 255, 255);
+    border: 2.5px #18135c solid;
     border-right: none;
   }
+  
   span.crud:hover {
     width: 330px;
   }

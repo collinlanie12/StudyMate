@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
+import PreNavigation from "../../components/PreNavigation/PreNavigation"
 import "./Home.css";
 
 import logo from "../../assets/images/StudyMate-Logo.png";
@@ -30,6 +31,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="Home">
+      <PreNavigation className= "Nav"/>
         <div class="bgimg-1">
           <div class="caption">
             <div className="banner-cont">

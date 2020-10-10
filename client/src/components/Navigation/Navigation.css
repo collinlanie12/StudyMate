@@ -1,32 +1,10 @@
-.teal {
-  background-color: #06721e;
-}
 
-.purple {
+.navbar{
   background-color: #393476;
 }
 
-.tealAndPurple {
-  background-image: linear-gradient(to bottom right, #393476, #06721e);
-}
-
-.notification .badge {
-  position: absolute;
-  top: -6px !important;
-  right: -2px !important;
-  padding: 5px 10px;
-  border-radius: 50%;
-  background: red;
-  color: white;
-}
-
-.notification {
-  color: white;
-  text-decoration: none;
-  padding: 1px 1px;
-  position: relative;
-  display: inline-block;
-  border-radius: 1px;
+.links{
+  font-size: 1.3em;
 }
 
 .navbar-brand {
