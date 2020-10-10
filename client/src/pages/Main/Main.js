@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Button } from "react-bootstrap";
 //import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
@@ -21,14 +22,36 @@ function Main() {
 
   const postCon = useContext(PostContext);
 
+  let showBtn;
+
   const [posts, setPosts] = useState([]);
+  const [isScroll, setIsScroll] = useState(false);
+
+  
+  const handleScroll = () => {
+    const timer = setTimeout(()=> {
+      setIsScroll(true);
+    }, 10000);
+    return() => clearTimeout(timer);
+  };
+
+  const handleRefresh = () => {
+    setIsScroll(false);
+  };
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
     API.Posts.getAll(auth.authToken).then((response) => {
       console.log(response.data);
       setPosts(response.data);
     });
-  }, [postCon.submitted]);
+  }, [postCon.submitted, isScroll]);
+
+  if (isScroll) {
+    showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "block" }
+  } else {
+    showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "none" }
+  }
 
   const handleAttendanceClick = (id) => {
     console.log(id);
@@ -64,6 +87,9 @@ function Main() {
         </div>
         <div className="row">
           <div className="col-12">
+            <div style={showBtn}>
+              <Button variant="info" onClick={handleRefresh}>Refresh Posts ⟳</Button>
+            </div>
             <PostButton />
           </div>
         </div>
