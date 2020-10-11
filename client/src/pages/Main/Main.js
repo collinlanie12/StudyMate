@@ -47,13 +47,13 @@ function Main() {
 
     const month = months.indexOf(dateArr[0]);
     const day = dateArr[1].replace("th", "");
-    const time = dateArr[2];
+    const dTime = dateArr[2];
 
     let d = new Date("October 15, 2020 11:00:00");
 
     d.setMonth(month);
     d.setDate(day);
-    d.setHours(time, 0, 0);
+    d.setHours(dTime, 0, 0);
 
     return d;
   };
