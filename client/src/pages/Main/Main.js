@@ -49,13 +49,24 @@ function Main() {
     const day = dateArr[1].replace("th", "");
     const dTime = dateArr[2];
 
-    let d = new Date("October 15, 2020 11:00:00");
+    let d = new Date();
 
     d.setMonth(month);
     d.setDate(day);
     d.setHours(dTime, 0, 0);
 
     return d;
+  };
+
+  const userPostExists = () => {
+    API.Posts.getAll(auth.authToken)
+      .then(data => {
+        const postCreatorIds = [];
+        data.data.forEach(e => {
+          postCreatorIds.push(e.UserId);
+        })
+        console.log(postCreatorIds);
+      });
   };
 
   const checkPostTime = (date) => {
@@ -79,7 +90,6 @@ function Main() {
   }
 
   const handleAttendanceClick = (id) => {
-    console.log(id);
     setShowAttendance(val => !val);
     setAttendanceId(id);
   }
@@ -91,9 +101,9 @@ function Main() {
 
         <div className="row">
           <div className="col-3">
-          <div className="leftSide">
-            {/* <SideNav /> */}
-            <Attendance isShowing={showAttendance} id={attendanceId} />
+            <div className="leftSide">
+              {/* <SideNav /> */}
+              <Attendance isShowing={showAttendance} id={attendanceId} />
             </div>
           </div>
 
