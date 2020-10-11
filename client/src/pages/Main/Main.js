@@ -5,7 +5,7 @@ import CalTab from "../../components/CalTab/CalTab";
 import PostButton from "../../components/PostButton/PostButton";
 import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import SideNav from "../../components/SideNav/SideNav";
+// import SideNav from "../../components/SideNav/SideNav";
 import Navigation from "../../components/Navigation/Navigation";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
@@ -66,9 +66,9 @@ function Main() {
 
         <div className="row">
           <div className="col-3">
-          <div className="leftSide">
-            {/* <SideNav /> */}
-            <Attendance isShowing={showAttendance} id={attendanceId} />
+            <div className="leftSide">
+              {/* <SideNav /> */}
+              <Attendance isShowing={showAttendance} id={attendanceId} />
             </div>
           </div>
 
