@@ -3,7 +3,7 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function SearchBar(props) {
   return (
-    <InputGroup className="mb-3">
+    <InputGroup className="mb-4 mt-5">
       <FormControl
         placeholder="Search new Subject's"
         aria-label="Search Subject"

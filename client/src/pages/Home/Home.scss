@@ -1,0 +1,329 @@
+/* Reset */
+// @import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
+
+// variables
+$anim-speed: 0.3s;
+
+// main styles
+.tiles {
+	width: 1040px;
+	font-size: 0;
+	text-align: center;
+	position: absolute;
+
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+	.picTile {
+		display: inline-block;
+		margin: 10px;
+		text-align: left;
+		opacity: .99;
+		overflow: hidden;
+		position: relative;
+		border-radius: 3px;
+		box-shadow: 0 0 20px 0 rgba(0,0,0,.05);
+		
+		&:before {
+			content: '';
+			background: linear-gradient(
+				to bottom,
+				rgba(0,0,0,0) 0%,
+				rgba(0,0,0,0.7) 100%
+			);
+			width: 100%;
+			height: 50%;
+			opacity: 0;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 2;
+			transition-property: top, opacity;
+			transition-duration: $anim-speed;
+		}
+		
+		img {
+			display: block;
+			max-width: 100%;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+		}
+		
+		.details {
+			font-size: 16px;
+			padding: 20px;
+			color: #fff;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 3;
+			
+			span {
+				display: block;
+				opacity: 0;
+				position: relative;
+				top: 100px;
+				transition-property: top, opacity;
+				transition-duration: $anim-speed;
+				transition-delay: 0s;
+			}
+			
+			.title {
+				line-height: 1;
+				font-weight: 600;
+				font-size: 18px;
+			}
+			
+			.info {
+				line-height: 1.2;
+				margin-top: 5px;
+				font-size: 12px;
+			}
+		}
+		
+		&:focus,
+		&:hover {
+			
+			&:before,
+			span {
+				opacity: 1;
+			}
+			
+			&:before {
+				top: 50%;
+			}
+			
+			span {
+				top: 0;
+			}
+			
+			.title {
+				transition-delay: 0.15s;
+			}
+			
+			.info {
+				transition-delay: 0.25s;
+			}
+		}
+	}
+}
+
+
+
+// ======================================================meet the team=================================================
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+$primary-color: rgb(61, 51, 153);
+$easing: all 0.5s cubic-bezier(.55,0,.1,1);
+$base-size: 11rem;
+
+
+
+.solemanBadge {
+  display: block;
+  position: relative;
+  width: $base-size;
+  height: $base-size;
+  cursor: pointer;
+  background: url(https://www.w3schools.com/howto/img_avatar.png) no-repeat 100% 50%;
+  background-size: 120%;
+  border-radius: 50%;
+  transition: $easing;
+  box-shadow: 0px .5rem 1rem rgba(0,0,0,.75);
+
+  &:hover {
+    box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+    background-position: 0% 50%;
+
+    .text {
+      transform: rotate(-45deg) translate(0px) rotate(-315deg);
+      background: rgba($primary-color,.5);
+      width: $base-size;
+      letter-spacing: 1rem;
+      line-height: $base-size;
+      height: $base-size;
+      margin-top: -($base-size / 2);
+      margin-left: -($base-size / 2);
+      transition:
+        $easing,
+        letter-spacing 1.5s ease-out;
+    }
+  }
+
+  .text {
+    display: block;
+    position: absolute;
+    width: ($base-size / 2);
+    height: ($base-size / 2);
+    line-height: ($base-size / 2);
+    left: 50%;
+    top: 50%;
+    margin-top: -($base-size / 4);
+    margin-left: -($base-size / 4);
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: $primary-color;
+    transform: rotate(-180deg) translate(-($base-size / 2)) rotate(180deg);
+    box-shadow: 0px .5rem 1rem rgba(0,0,0,.5);
+    transition: $easing;
+  }
+}
+
+.collinBadge {
+    display: block;
+    position: relative;
+    width: $base-size;
+    height: $base-size;
+    cursor: pointer;
+    background: url(https://www.w3schools.com/howto/img_avatar.png) no-repeat 100% 50%;
+    background-size: 120%;
+    border-radius: 50%;
+    transition: $easing;
+    box-shadow: 0px .5rem 1rem rgba(0,0,0,.75);
+  
+    &:hover {
+      box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+      background-position: 0% 50%;
+  
+      .text {
+        transform: rotate(-45deg) translate(0px) rotate(-315deg);
+        background: rgba($primary-color,.5);
+        width: $base-size;
+        letter-spacing: 1rem;
+        line-height: $base-size;
+        height: $base-size;
+        margin-top: -($base-size / 2);
+        margin-left: -($base-size / 2);
+        transition:
+          $easing,
+          letter-spacing 1.5s ease-out;
+      }
+    }
+  
+    .text {
+      display: block;
+      position: absolute;
+      width: ($base-size / 2);
+      height: ($base-size / 2);
+      line-height: ($base-size / 2);
+      left: 50%;
+      top: 50%;
+      margin-top: -($base-size / 4);
+      margin-left: -($base-size / 4);
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 50%;
+      background: $primary-color;
+      transform: rotate(-180deg) translate(-($base-size / 2)) rotate(180deg);
+      box-shadow: 0px .5rem 1rem rgba(0,0,0,.5);
+      transition: $easing;
+    }
+  }
+
+.jordanBadge {
+    display: block;
+    position: relative;
+    width: $base-size;
+    height: $base-size;
+    cursor: pointer;
+    background: url(https://www.w3schools.com/howto/img_avatar.png) no-repeat 100% 50%;
+    background-size: 120%;
+    border-radius: 50%;
+    transition: $easing;
+    box-shadow: 0px .5rem 1rem rgba(0,0,0,.75);
+  
+    &:hover {
+      box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+      background-position: 0% 50%;
+  
+      .text {
+        transform: rotate(-45deg) translate(0px) rotate(-315deg);
+        background: rgba($primary-color,.5);
+        width: $base-size;
+        letter-spacing: 1rem;
+        line-height: $base-size;
+        height: $base-size;
+        margin-top: -($base-size / 2);
+        margin-left: -($base-size / 2);
+        transition:
+          $easing,
+          letter-spacing 1.5s ease-out;
+      }
+    }
+  
+    .text {
+      display: block;
+      position: absolute;
+      width: ($base-size / 2);
+      height: ($base-size / 2);
+      line-height: ($base-size / 2);
+      left: 50%;
+      top: 50%;
+      margin-top: -($base-size / 4);
+      margin-left: -($base-size / 4);
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 50%;
+      background: $primary-color;
+      transform: rotate(-180deg) translate(-($base-size / 2)) rotate(180deg);
+      box-shadow: 0px .5rem 1rem rgba(0,0,0,.5);
+      transition: $easing;
+    }
+  }
+
+.ginoBadge {
+    display: block;
+    position: relative;
+    width: $base-size;
+    height: $base-size;
+    cursor: pointer;
+    background: url(https://www.w3schools.com/howto/img_avatar.png) no-repeat 100% 50%;
+    background-size: 120%;
+    border-radius: 50%;
+    transition: $easing;
+    box-shadow: 0px .5rem 1rem rgba(0,0,0,.75);
+  
+    &:hover {
+      box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+      background-position: 0% 50%;
+  
+      .text {
+        transform: rotate(-45deg) translate(0px) rotate(-315deg);
+        background: rgba($primary-color,.5);
+        width: $base-size;
+        letter-spacing: 1rem;
+        line-height: $base-size;
+        height: $base-size;
+        margin-top: -($base-size / 2);
+        margin-left: -($base-size / 2);
+        transition:
+          $easing,
+          letter-spacing 1.5s ease-out;
+      }
+    }
+  
+    .text {
+      display: block;
+      position: absolute;
+      width: ($base-size / 2);
+      height: ($base-size / 2);
+      line-height: ($base-size / 2);
+      left: 50%;
+      top: 50%;
+      margin-top: -($base-size / 4);
+      margin-left: -($base-size / 4);
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 50%;
+      background: $primary-color;
+      transform: rotate(-180deg) translate(-($base-size / 2)) rotate(180deg);
+      box-shadow: 0px .5rem 1rem rgba(0,0,0,.5);
+      transition: $easing;
+    }
+  }

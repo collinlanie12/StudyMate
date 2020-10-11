@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('user_post', {
+    return queryInterface.createTable('user_posts', {
       createdAt: {
         type: Sequelize.DATE
       },
@@ -24,10 +24,15 @@ module.exports = {
           model: "Users",
           key: "id"
         }
+      },
+      is_calendar: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        default: 0
       }
     })
   },
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('user_post');
+    return queryInterface.dropTable('user_posts');
   }
 };

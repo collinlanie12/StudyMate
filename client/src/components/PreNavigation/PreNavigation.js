@@ -26,7 +26,7 @@ class PreNavigation extends Component {
 
     return (
       <div className="Navigation sticky-top">
-        <nav className="navbar sticky-top navbar-expand-lg navbar-dark tealAndPurple mb-3">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark mb-3">
           <span className="navbar-brand">
             <span className="s">S</span>
             tudy<span className="m">M</span>ate
@@ -44,7 +44,19 @@ class PreNavigation extends Component {
           </button>
 
           <div className={targetClass} id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav mr-auto links">
+
+            {user && (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to="/main"
+                    onClick={this.toggleCollapse}
+                  >
+                    Main
+                  </Link>
+                </li>
+              )}
 
             </ul>
                 

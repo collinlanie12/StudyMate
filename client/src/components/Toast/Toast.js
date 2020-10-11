@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Toast, Button, ListGroup } from "react-bootstrap";
 import API from "../../lib/API";
+import AuthContext from "../../contexts/AuthContext";
 
 import "./Toast.css";
 
@@ -8,10 +9,17 @@ import "./Toast.css";
 function Bubble(props) {
   let time;
 
+  const auth = useContext(AuthContext);
   const [showB, setShowB] = useState(true);
   const [userName, setUserName] = useState("");
   const [subjectName, setSubjectName] = useState("");
-  const toggleShowB = () => setShowB(!showB);
+  const toggleShowB = () => {
+    setShowB(!showB);
+    API.Posts.userRemovePost(auth.authToken)
+      .then(result => {
+        console.log(result.data);
+      })
+  }
 
   switch (props.time) {
     case 0:
@@ -103,7 +111,7 @@ function Bubble(props) {
         onClose={toggleShowB}
         show={showB}
         animation={false}
-        style= {{minWidth: "335px"}}
+        style={{ minWidth: "335px" }}
       >
         <Toast.Header>
           <img
@@ -125,7 +133,9 @@ function Bubble(props) {
             <br></br>
             {props.content}
           </div>
-          <Button onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
+          <Button className="attendBtn" variant="outline-info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
+          <Button className="joinBtn" variant="outline-info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+
         </Toast.Body>
       </Toast>
     </>

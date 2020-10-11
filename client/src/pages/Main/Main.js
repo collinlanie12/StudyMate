@@ -7,11 +7,12 @@ import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SideNav from "../../components/SideNav/SideNav";
 import Navigation from "../../components/Navigation/Navigation";
-
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
-import { InputGroup, FormControl, Button } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import Attendance from "../../components/Attendance/Attendance";
+
+import "./Main.css"
 
 
 function Main() {
@@ -21,7 +22,22 @@ function Main() {
 
   const postCon = useContext(PostContext);
 
+  let showBtn;
+
   const [posts, setPosts] = useState([]);
+  const [isScroll, setIsScroll] = useState(false);
+
+
+  const handleScroll = () => {
+    const timer = setTimeout(() => {
+      setIsScroll(true);
+    }, 10000);
+    return () => clearTimeout(timer);
+  };
+
+  const handleRefresh = () => {
+    setIsScroll(false);
+  };
 
   const convertPostTime = (date, time) => {
     const postDateTime = [`date time`];
@@ -43,23 +59,24 @@ function Main() {
   };
 
   const checkPostTime = (date) => {
-    if (date.getTime() < Date.now() && /*post has associated user*/) {
+    if (date.getTime() < Date.now() /*&& post has associated user*/) {
       //give the user a notification if they're the logged in user
     };
   };
 
   useEffect(() => {
-    API.Posts.getAll(auth.authToken)
-      .then((response) => {
-        console.log(response.data);
-        setPosts(response.data);
-      })
-      .then(data => {
-        data.forEach(e => {
+    window.addEventListener('scroll', handleScroll);
+    API.Posts.getAll(auth.authToken).then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
+  }, [postCon.submitted, isScroll]);
 
-        });
-      });
-  }, [postCon.submitted]);
+  if (isScroll) {
+    showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "block" }
+  } else {
+    showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "none" }
+  }
 
   const handleAttendanceClick = (id) => {
     console.log(id);
@@ -73,14 +90,15 @@ function Main() {
       <div className="container-fluid">
 
         <div className="row">
-          <div className="col-3 leftSide">
-            <SideNav />
-            <br />
+          <div className="col-3">
+          <div className="leftSide">
+            {/* <SideNav /> */}
             <Attendance isShowing={showAttendance} id={attendanceId} />
+            </div>
           </div>
 
           <div className="text-center col-6 middleRow">
-            <h2 className="mt-3 mb-4">suggested for you</h2>
+            <h1 className="mt-4 mb-4 title">suggested for you <i className="fa fa-book" aria-hidden="true"></i></h1>
             <SearchBar />
             {posts.map(post => (
               <Bubble userType="student" id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
@@ -89,12 +107,15 @@ function Main() {
           </div>
 
           <div className="col-3 rightSide">
-            <h1 className="text-center calTitle">Calendar</h1>
+            <h1 className="text-center title">Calendar <i className="fa fa-calendar" aria-hidden="true"></i></h1>
             <CalTab />
           </div>
         </div>
         <div className="row">
           <div className="col-12">
+            <div style={showBtn}>
+              <Button variant="info" onClick={handleRefresh}>Refresh Posts ⟳</Button>
+            </div>
             <PostButton />
           </div>
         </div>
