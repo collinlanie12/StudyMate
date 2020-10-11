@@ -23,11 +23,42 @@ function Main() {
 
   const [posts, setPosts] = useState([]);
 
+  const convertPostTime = (date, time) => {
+    const postDateTime = [`date time`];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    const dateArr = date.split(" ");
+
+    const month = months.indexOf(dateArr[0]);
+    const day = dateArr[1].replace("th", "");
+    const time = dateArr[2];
+
+    let d = new Date("October 15, 2020 11:00:00");
+
+    d.setMonth(month);
+    d.setDate(day);
+    d.setHours(time, 0, 0);
+
+    return d;
+  };
+
+  const checkPostTime = (date) => {
+    if (date.getTime() < Date.now() && /*post has associated user*/) {
+      //give the user a notification if they're the logged in user
+    };
+  };
+
   useEffect(() => {
-    API.Posts.getAll(auth.authToken).then((response) => {
-      console.log(response.data);
-      setPosts(response.data);
-    });
+    API.Posts.getAll(auth.authToken)
+      .then((response) => {
+        console.log(response.data);
+        setPosts(response.data);
+      })
+      .then(data => {
+        data.forEach(e => {
+
+        });
+      });
   }, [postCon.submitted]);
 
   const handleAttendanceClick = (id) => {

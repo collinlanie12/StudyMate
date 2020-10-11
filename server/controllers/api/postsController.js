@@ -14,9 +14,10 @@ postsController.post('/create', (req, res) => {
 
 //get all posts
 postsController.get("/all", (req, res) => {
-    db.Post.findAll({}).then(result => {
-        res.json(result);
-    });
+    db.Post.findAll({})
+        .then(result => {
+            res.json(result);
+        });
 });
 
 //get post(s) by subjectId
@@ -39,7 +40,7 @@ postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
                 return res.sendStatus(404);
             }
             return result.getUsers()
-            
+
         })
         .then(data => {
             let usernameArr = [];
