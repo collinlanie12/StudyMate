@@ -43,6 +43,9 @@ module.exports = function (sequelize, DataTypes) {
     User.belongsToMany(models.Post, {
       through: "user_post"
     });
+    User.belongsToMany(models.Notifications, {
+      through: "user_notifications"
+    });
   }
 
   return User;
