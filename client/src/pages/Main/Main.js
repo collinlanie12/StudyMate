@@ -128,7 +128,7 @@ function Main() {
           </div>
 
           <div className="text-center col-6 middleRow">
-            <h1 className="mt-4 mb-4 title">suggested for you <i className="fa fa-book" aria-hidden="true"></i></h1>
+            <h1 className="mt-4 mb-4 title">Suggested For You <i className="fa fa-book" aria-hidden="true"></i></h1>
             <SearchBar />
             {posts.map(post => (
               <Bubble userType="student" key={post.id} id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
