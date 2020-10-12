@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import API from '../../lib/API';
 import DefaultProfile from "../../assets/images/default-profile-picture.png";
 import AuthContext from "../../contexts/AuthContext";
@@ -14,6 +15,7 @@ function UserSettings() {
     const [user_bio, setUser_bio] = useState("");
     const [subjects, setSubjects] = useState([]);
     const [selectedSubjects, setSelectedSubjects] = useState([]);
+    const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
     let subArr = [];
 
@@ -33,9 +35,9 @@ function UserSettings() {
         API.Users.update(auth.authToken, username, parseInt(is_tutor), parseInt(timezone), user_bio, selectedSubjects)
             .then(response => response.data)
             .then(user => console.log(user))
+            .then(alert("Your info has been updated!"))
+            .then(setRedirectToReferrer(true))
             .catch(err => console.log(err.message));
-
-        alert("Your info has been updated!");
     };
 
     function handleCheckChange(e) {
@@ -54,6 +56,12 @@ function UserSettings() {
         }
 
     }
+
+    const { from } = { from: { pathname: "/main" } };
+
+    if (redirectToReferrer) {
+        return <Redirect to={from} />;
+      }
 
     return (
     <div>

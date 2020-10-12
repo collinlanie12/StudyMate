@@ -71,6 +71,22 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    createSignup: function (authToken, UserId, id) {
+      return axios.post('/api/posts/signup/add', { UserId, id }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+
+    deleteSignup: function (authToken, UserId, id) {
+      return axios.delete('/api/posts/signup/remove', { UserId, id }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     }
   },
 

@@ -21,6 +21,16 @@ function Bubble(props) {
       })
   }
 
+  function handleSignUp(e) {
+    e.preventDefault();
+
+    API.Posts.createSignup(auth.authToken, auth.user.id, props.id)
+    .then(response => response.data)
+    .catch(err => console.log(err.message));
+
+    alert("You have been signed up for this session!");
+  };
+
   switch (props.time) {
     case 0:
       time = "12am";
@@ -101,6 +111,7 @@ function Bubble(props) {
       .then(res => { setUserName(res.data.username) });
     API.Subjects.findSubject(props.subjectName)
       .then(res => { setSubjectName(res.data.subject) });
+      console.log(auth.user.id);
   }, []);
 
 
@@ -133,8 +144,8 @@ function Bubble(props) {
             <br></br>
             {props.content}
           </div>
-          <Button className="attendBtn" variant="outline-info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
-          <Button className="joinBtn" variant="outline-info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+          <Button className="attendBtn" variant="info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
+          <Button className="joinBtn" variant="info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
 
         </Toast.Body>
       </Toast>
