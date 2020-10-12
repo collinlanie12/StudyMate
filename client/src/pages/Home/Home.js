@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import PreNavigation from "../../components/PreNavigation/PreNavigation";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import "./Home.scss";
 
@@ -36,8 +37,6 @@ const idea = {
   margin: "10px",
 };
 
-
-
 class HomePage extends Component {
   render() {
     return (
@@ -46,9 +45,9 @@ class HomePage extends Component {
         <div class="bgimg-1">
           <div class="caption">
             <div className="banner-cont">
-              New ideas,
-              <br />
               Study more,
+              <br />
+              Make friends,
               <br />
               Learn together.
             </div>
@@ -75,13 +74,9 @@ class HomePage extends Component {
 
         <div style={{ position: "relative" }}>
           <div style={text}>
-
-
             <h3 className="intro" style={{ textAlign: "center" }}>
               Meet the team
             </h3>
-
-            
           </div>
           <div className="row container-fluid">
             <div className="col-3">
@@ -89,13 +84,21 @@ class HomePage extends Component {
                 <div class="jordanBadge">
                   <div class="text">Jordan</div> <br />
                 </div>
-                <p className="Info">
-                  An artist in every sense of the word but also a wizard on
-                  front and back end coding. Uses both sides of his brain to the
-                  point that people are convinced he stole it from a lab.
-                </p>
+
                 <br />
               </div>
+              <p className="Info">
+                An artist in every sense of the word but also a wizard on front
+                and back end coding. Uses both sides of his brain to the point
+                that people are convinced he stole it from a lab.
+              </p>{" "}
+              <a href="https://github.com/JordanT111596">
+                {" "}
+                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+              </a>{" "}
+              <a href="https://www.linkedin.com/in/jordantriplett/">
+                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+              </a>
             </div>
 
             <div className="col-3">
@@ -103,13 +106,20 @@ class HomePage extends Component {
                 <div class="ginoBadge">
                   <div class="text">Gino</div> <br />
                 </div>
-                <p className="Info">
-                  A bank robber, Casino Manager, Boxer and professional gamer in
-                  a past life, moved to Charlotte for the soul purpose of
-                  "Cleveland was TRASH"
-                </p>
                 <br />
               </div>
+              <p className="Info">
+                A bank robber, Casino Manager, Boxer and professional gamer in a
+                past life, moved to Charlotte for the soul purpose of "Cleveland
+                was TRASH"
+              </p>{" "}
+              <a href="https://github.com/toomuchbob">
+                {" "}
+                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+              </a>{" "}
+              <a href="https://www.linkedin.com/in/gino-zaccardelli-06887418/">
+                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+              </a>
             </div>
 
             <div className="col-3">
@@ -117,23 +127,39 @@ class HomePage extends Component {
                 <div class="collinBadge">
                   <div class="text">Collin</div> <br />
                 </div>
-                <p className="Info">
-                  A boy Genius born and raised on Mars, he moved to earth when
-                  he found out that we had video games and wifi.
-                </p>
                 <br />
               </div>
+              <p className="Info">
+                A boy Genius born and raised on Mars, he moved to earth when he
+                found out that we had video games and wifi.
+              </p>{" "}
+              <a href="https://github.com/collinlanie12">
+                {" "}
+                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+              </a>{" "}
+              <a href="https://www.linkedin.com/in/collin-lanier-a32762169/">
+                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+              </a>
             </div>
             <div className="col-3">
               <div className="soleman">
                 <div class="solemanBadge">
                   <div class="text">Soleman</div> <br />
                 </div>
-                <p className="Info">
-                  Some dude that wanted his picture next to 3 of the greats.{" "}
-                </p>
                 <br />
               </div>
+              <p className="Info">
+                Born in Canada, but having lived in many countries, Soleman
+                Sayeed became infatuated with travel and determined to work
+                remotely. Attended the coding bootcamp in UNCC 2020 with the
+                goal to become a full stack web-developer.
+              </p>
+              <a href="https://github.com/solemansay">
+                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/soleman-sayeed-998488177/">
+                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -172,9 +198,12 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description"><strong>
-                  In an online class we have no friends or study groups because
-                  we are too cook for regular people.</strong>
+                <p class="description">
+                  <strong>
+                    Having attended an online coding Bootcamp, the four creators
+                    of this website realized the difficulties of studying at
+                    home alone.
+                  </strong>
                 </p>
               </figcaption>
             </figure>
@@ -199,8 +228,12 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description"><strong>
-                  We mind fucked eachother until we had a child.</strong>
+                <p class="description">
+                  <strong>
+                    The initial idea for the website had features that were
+                    too ambitious for the time allotted. However, we will be revisiting the project to
+                    complete our original vision.
+                  </strong>
                 </p>
               </figcaption>
             </figure>
@@ -225,7 +258,14 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description"> <strong>We didn't plan a damn thing.</strong></p>
+                <p class="description">
+                  {" "}
+                  <strong>
+                    A strong point in our group was planning every step of the
+                    the site, divvying up the responsibilities and workload as
+                    well as playing to individual teammates strengths.{" "}
+                  </strong>
+                </p>
               </figcaption>
             </figure>
 
@@ -249,14 +289,22 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description"><strong>Yeah we have none...</strong></p>
+                <p class="description">
+                  <strong>
+                    Future hopes for the website include payment methods for
+                    tutors/teachers to earn money during their sessions, a chat feature, and a friend system.
+                  </strong>
+                </p>
               </figcaption>
             </figure>
           </div>
         </div>
 
-        <Button size="lg" className="m-4" variant="info">Login/Register</Button>
-
+        <Link className="nav-link" to="/login">
+          <Button size="lg" className="m-4" variant="info">
+            {" Login/Register"}
+          </Button>
+        </Link>
       </div>
     );
   }

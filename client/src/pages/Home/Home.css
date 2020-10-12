@@ -109,8 +109,6 @@ font-size: 17px;
 }
 
 
-
-
 .soleman{
   margin: auto;
   width: 50%;
@@ -119,7 +117,7 @@ font-size: 17px;
 }
 
 .Info{
-  margin-top: 15px;
+  width: 350px;
 }
 
 .gino{
@@ -341,4 +339,9 @@ figure.effect-zoe:hover p.icon-links a:nth-child(2) {
 figure.effect-zoe:hover p.icon-links a:first-child {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
+}
+
+.icon{
+  color:rgb(73, 72, 72);
+  margin: 5px;
 }
