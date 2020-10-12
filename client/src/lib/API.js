@@ -92,4 +92,21 @@ export default {
       });
     }
   },
+
+  Notifications: {
+    getAll: function (authToken) {
+      return axios.get('/api/notifications/all', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    create: function (authToken, message, atTime) {
+      return axios.post('/api/notifications/create', { message, atTime }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
+    }
+  }
 };
