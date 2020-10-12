@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import PreNavigation from "../../components/PreNavigation/PreNavigation";
+import {Button} from "react-bootstrap"
 import "./Home.css";
 import "./Home.scss";
 
@@ -34,6 +35,8 @@ const idea = {
   margin: "10px",
 };
 
+
+
 class HomePage extends Component {
   render() {
     return (
@@ -42,11 +45,11 @@ class HomePage extends Component {
         <div class="bgimg-1">
           <div class="caption">
             <div className="banner-cont">
-              Big Stank
+              New ideas,
               <br />
-              Stank People,
+              Study more,
               <br />
-              New Stank.
+              Learn together.
             </div>
           </div>
         </div>
@@ -71,20 +74,25 @@ class HomePage extends Component {
 
         <div style={{ position: "relative" }}>
           <div style={text}>
+
+
             <h3 className="intro" style={{ textAlign: "center" }}>
               Meet the team
             </h3>
+
+            
           </div>
           <div className="row container-fluid">
-          <div className="col-3">
-              <div className="soleman">
-                <div class="solemanBadge">
+            <div className="col-3">
+              <div className="jordan">
+                <div class="jordanBadge">
                   <div class="text">Jordan</div> <br />
                 </div>
-                <p className="solemanInfo">
-                An artist in every sense of the word but also a wizard on front
-                and back end coding. Uses both sides of his brain to the point
-                that people are convinced he stole it from a lab.</p>
+                <p className="Info">
+                  An artist in every sense of the word but also a wizard on
+                  front and back end coding. Uses both sides of his brain to the
+                  point that people are convinced he stole it from a lab.
+                </p>
                 <br />
               </div>
             </div>
@@ -94,10 +102,11 @@ class HomePage extends Component {
                 <div class="ginoBadge">
                   <div class="text">Gino</div> <br />
                 </div>
-                <p className="ginoInfo">
-                A bank robber, Casino Manager, Boxer and professional gamer in a
-                past life, moved to Charlotte for the soul purpose of "Cleveland
-                was TRASH"</p>
+                <p className="Info">
+                  A bank robber, Casino Manager, Boxer and professional gamer in
+                  a past life, moved to Charlotte for the soul purpose of
+                  "Cleveland was TRASH"
+                </p>
                 <br />
               </div>
             </div>
@@ -107,9 +116,10 @@ class HomePage extends Component {
                 <div class="collinBadge">
                   <div class="text">Collin</div> <br />
                 </div>
-                <p className="collinInfo">
-                A boy Genius born and raised on Mars, he moved to earth when he
-                found out that we had video games and wifi.</p>
+                <p className="Info">
+                  A boy Genius born and raised on Mars, he moved to earth when
+                  he found out that we had video games and wifi.
+                </p>
                 <br />
               </div>
             </div>
@@ -118,7 +128,7 @@ class HomePage extends Component {
                 <div class="solemanBadge">
                   <div class="text">Soleman</div> <br />
                 </div>
-                <p className="solemanInfo">
+                <p className="Info">
                   Some dude that wanted his picture next to 3 of the greats.{" "}
                 </p>
                 <br />
@@ -140,45 +150,112 @@ class HomePage extends Component {
             </p>
           </div>
 
-          <div class="tiles">
-            <a class="picTile" href="#">
-              <img src="https://image.shutterstock.com/image-vector/video-call-icon-logo-vector-260nw-1714257463.jpg" />
-              <div class="details">
-                <span class="title">Lorem Ipsum Dolor</span>
-                <span class="info">
-                  Quisque vel felis lectus donec vitae dapibus magna
-                </span>
-              </div>
-            </a>
-            <a class="picTile" href="#">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/2.jpg" />
-              <div class="details">
-                <span class="title">Lorem Ipsum Dolor</span>
-                <span class="info">
-                  Quisque vel felis lectus donec vitae dapibus magna
-                </span>
-              </div>
-            </a>
-            <a class="picTile" href="#">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/3.jpg" />
-              <div class="details">
-                <span class="title">Lorem Ipsum Dolor</span>
-                <span class="info">
-                  Quisque vel felis lectus donec vitae dapibus magna
-                </span>
-              </div>
-            </a>
-            <a class="picTile" href="#">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/216995/4.jpg" />
-              <div class="details">
-                <span class="title">Lorem Ipsum Dolor</span>
-                <span class="info">
-                  Quisque vel felis lectus donec vitae dapibus magna
-                </span>
-              </div>
-            </a>
+          <div class="grid">
+            <figure class="effect-zoe">
+              <img
+                src="https://www.princetonreview.com/cms-content/how-to-make-the-most-out-of-mcat-study-group.jpg"
+                alt="Niche img"
+              />
+              <figcaption>
+                <h2>
+                  The <span>Niche</span>
+                </h2>
+                <p class="icon-links">
+                  <a>
+                    <span class="icon-heart"></span>
+                  </a>
+                  <a>
+                    <span class="icon-eye"></span>
+                  </a>
+                  <a>
+                    <span class="icon-paper-clip"></span>
+                  </a>
+                </p>
+                <p class="description"><strong>
+                  In an online class we have no friends or study groups because
+                  we are too cook for regular people.</strong>
+                </p>
+              </figcaption>
+            </figure>
+
+            <figure class="effect-zoe">
+              <img
+                src="https://www.floridacareercollege.edu/wp-content/uploads/sites/4/2020/02/Study-Tips-to-Become-a-Better-Test-Taker-Florida-Career-College.jpg"
+                alt="img25"
+              />
+              <figcaption>
+                <h2>
+                  Brain <span>Child</span>
+                </h2>
+                <p class="icon-links">
+                  <a>
+                    <span class="icon-heart"></span>
+                  </a>
+                  <a>
+                    <span class="icon-eye"></span>
+                  </a>
+                  <a>
+                    <span class="icon-paper-clip"></span>
+                  </a>
+                </p>
+                <p class="description"><strong>
+                  We mind fucked eachother until we had a child.</strong>
+                </p>
+              </figcaption>
+            </figure>
+
+            <figure class="effect-zoe">
+              <img
+                src="https://i.ytimg.com/vi/4IVlE5wnBy0/maxresdefault.jpg"
+                alt="img26"
+              />
+              <figcaption>
+                <h2>
+                  Project <span>Plan</span>
+                </h2>
+                <p class="icon-links">
+                  <a>
+                    <span class="icon-heart"></span>
+                  </a>
+                  <a>
+                    <span class="icon-eye"></span>
+                  </a>
+                  <a>
+                    <span class="icon-paper-clip"></span>
+                  </a>
+                </p>
+                <p class="description"> <strong>We didn't plan a damn thing.</strong></p>
+              </figcaption>
+            </figure>
+
+            <figure class="effect-zoe">
+              <img
+                src="https://previews.123rf.com/images/faithie/faithie1602/faithie160200441/51599055-future-loading-person-thinking-about-the-future-with-progress-bar-in-a-thought-bubble.jpg"
+                alt="img25"
+              />
+              <figcaption>
+                <h2>
+                  Future <span>Hopes</span>
+                </h2>
+                <p class="icon-links">
+                  <a>
+                    <span class="icon-heart"></span>
+                  </a>
+                  <a>
+                    <span class="icon-eye"></span>
+                  </a>
+                  <a>
+                    <span class="icon-paper-clip"></span>
+                  </a>
+                </p>
+                <p class="description"><strong>Yeah we have none...</strong></p>
+              </figcaption>
+            </figure>
           </div>
         </div>
+
+        <Button size="lg" className="m-4" variant="info">Login/Register</Button>
+
       </div>
     );
   }

@@ -71,6 +71,22 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       });
+    },
+
+    createSignup: function (authToken, UserId, id) {
+      return axios.post('/api/posts/signup/add', { UserId, id }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+
+    deleteSignup: function (authToken, UserId, id) {
+      return axios.delete('/api/posts/signup/remove', { UserId, id }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     }
   },
 
@@ -92,4 +108,21 @@ export default {
       });
     }
   },
+
+  Notifications: {
+    getAll: function (authToken) {
+      return axios.get('/api/notifications/all', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    create: function (authToken, message, atTime) {
+      return axios.post('/api/notifications/create', { message, atTime }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
+    }
+  }
 };
