@@ -65,6 +65,14 @@ export default {
       });
     },
 
+    getPostsWithAttendees: function (authToken) {
+      return axios.get('/api/posts/signup/attendees', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+
     getSignups: function (authToken, PostId) {
       return axios.get(`/api/posts/signup/get/${PostId}`, {
         headers: {
