@@ -144,8 +144,8 @@ function Bubble(props) {
             <br></br>
             {props.content}
           </div>
-          <Button className="attendBtn" variant="outline-info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
-          <Button className="joinBtn" variant="outline-info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+          <Button className="attendBtn" variant="info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
+          <Button className="joinBtn" variant="info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
 
         </Toast.Body>
       </Toast>
