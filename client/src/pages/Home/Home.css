@@ -13,7 +13,7 @@
 }
 
 .bgimg-1 {
-  background-image: url("../../assets/images/splash.jpg");
+  background-image: url("../../assets/images/splash2.jpg");
   min-height: 650px;
 }
 
@@ -92,7 +92,7 @@
 .theIdea {
   background-color: #605c91;
   height: 850px;
-  border-top: solid 6px #06721e;
+  border-top: solid 6px #138496;
 }
 
 .ideaTitle {
