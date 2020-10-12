@@ -67,10 +67,6 @@ postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
         })
 });
 
-postsController.get("/join/signups", JWTVerifier, (req, res) => {
-
-});
-
 //new user signup to post
 postsController.post("/signup/add", (req, res) => {
     db.Post.findOne({

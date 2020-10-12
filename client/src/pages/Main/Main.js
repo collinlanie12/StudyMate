@@ -14,6 +14,8 @@ import Attendance from "../../components/Attendance/Attendance";
 
 import "./Main.css"
 
+const { promisify } = require('util')
+
 
 function Main() {
   const auth = useContext(AuthContext);
@@ -66,7 +68,29 @@ function Main() {
           postCreatorIds.push(e.UserId);
         })
         console.log(postCreatorIds);
+        return postCreatorIds;
       });
+  };
+
+  const userPostExistsPromise = promisify(userPostExists)
+
+  const userIsAttending = (postIds) => {
+    postIds.forEach(postId => {
+      API.Posts.getSignups(auth.authToken, postId)
+        .then(data => {
+          const attendance = [];
+          data.data.forEach(e => {
+            attendance.push(
+              {
+                id: e,
+                attendance: data
+              }
+            )
+          })
+          console.log(attendance);
+          return attendance;
+        });
+    });
   };
 
   const checkPostTime = (date) => {
@@ -80,6 +104,7 @@ function Main() {
     API.Posts.getAll(auth.authToken).then((response) => {
       console.log(response.data);
       setPosts(response.data);
+      userIsAttending([1, 2, 3, 4]);
     });
   }, [postCon.submitted, isScroll]);
 
