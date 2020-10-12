@@ -6,6 +6,7 @@ import "./Home.css";
 import "./Home.scss";
 
 import logo from "../../assets/images/StudyMate-Logo.png";
+import logo2 from "../../assets/images/StudyMate-Logo2.png";
 
 const img = {
   backgroundColor: "transparent",
@@ -57,7 +58,7 @@ class HomePage extends Component {
         <div style={bigDiv} className="studyMateBio">
           <ScrollAnimation animateIn="fadeIn" animateOnce="true">
             <img
-              src={logo}
+              src={logo2}
               alt="logo"
               className="mb-5 SMTitle"
               style={{ left: "100px", maxWidth: "700px" }}

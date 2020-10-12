@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-//import { Redirect } from 'react-router-dom';
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
 import PostButton from "../../components/PostButton/PostButton";
 import PostContext from "../../contexts/PostContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
-// import SideNav from "../../components/SideNav/SideNav";
 import Navigation from "../../components/Navigation/Navigation";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
@@ -73,10 +71,10 @@ function Main() {
           </div>
 
           <div className="text-center col-6 middleRow">
-            <h1 className="mt-4 mb-4 title">suggested for you <i className="fa fa-book" aria-hidden="true"></i></h1>
+            <h1 className="mt-4 mb-4 title">Suggested For You <i className="fa fa-book" aria-hidden="true"></i></h1>
             <SearchBar />
             {posts.map(post => (
-              <Bubble userType="student" id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
+              <Bubble userType="student" key={post.id} id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
                 title={post.title} date={post.date} isShowingAttendance={showAttendance} onAttendanceClick={handleAttendanceClick} />
             ))}
           </div>
