@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import PreNavigation from "../../components/PreNavigation/PreNavigation";
+
 
 import AuthContext from '../../contexts/AuthContext';
 
@@ -41,6 +43,7 @@ class Register extends Component {
 
     return (
       <div className='Register'>
+        <PreNavigation />
         <div className='row'>
           <div className='col'>
             <h1>Register</h1>
