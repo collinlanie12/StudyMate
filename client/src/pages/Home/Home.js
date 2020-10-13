@@ -87,18 +87,24 @@ class HomePage extends Component {
 
                 <br />
               </div>
-              <p className="Info">
-                An artist in every sense of the word but also a wizard on front
-                and back end coding. Uses both sides of his brain to the point
-                that people are convinced he stole it from a lab.
-              </p>{" "}
-              <a href="https://github.com/JordanT111596">
-                {" "}
-                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
-              </a>{" "}
-              <a href="https://www.linkedin.com/in/jordantriplett/">
-                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
-              </a>
+
+              <div className="Info">
+                <p>
+                  After undergoing the UNCC Full Stack Web Development Bootcamp,
+                  Jordan uses his artistic influences in music and film to help
+                  make a full and vibrant online experience, putting in passion
+                  from the first vision to the final product.
+                </p>
+                <a target="blank" href="https://github.com/JordanT111596">
+                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                </a>
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/jordantriplett/"
+                >
+                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
 
             <div className="col-3">
@@ -108,18 +114,24 @@ class HomePage extends Component {
                 </div>
                 <br />
               </div>
-              <p className="Info">
-                A bank robber, Casino Manager, Boxer and professional gamer in a
-                past life, moved to Charlotte for the soul purpose of "Cleveland
-                was TRASH"
-              </p>{" "}
-              <a href="https://github.com/toomuchbob">
-                {" "}
-                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
-              </a>{" "}
-              <a href="https://www.linkedin.com/in/gino-zaccardelli-06887418/">
-                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
-              </a>
+
+              <div className="Info">
+                <p>
+                  Born and raised in Cleveland Ohio, Gino Zaccardelli relocated to Charlotte
+                  NC to change course from Information Technology to Full-Stack
+                  Web Developer. Gino channels his creativity in music to web
+                  design.
+                </p>
+                <a target="blank" href="https://github.com/toomuchbob">
+                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                </a>
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/gino-zaccardelli-06887418/"
+                >
+                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
 
             <div className="col-3">
@@ -129,18 +141,26 @@ class HomePage extends Component {
                 </div>
                 <br />
               </div>
-              <p className="Info">
-                A boy Genius born and raised on Mars, he moved to earth when he
-                found out that we had video games and wifi.
-              </p>{" "}
-              <a href="https://github.com/collinlanie12">
-                {" "}
-                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
-              </a>{" "}
-              <a href="https://www.linkedin.com/in/collin-lanier-a32762169/">
-                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
-              </a>
+
+              <div className="Info">
+                <p>
+                  "The two most powerful warriors are patience and time." – Leo
+                  Tolstoy, War and Peace. At nine years old having watched The
+                  Matrix, my passion for coding began. I set aside time to learn
+                  how to program by attending the UNCC Coding Bootcamp.
+                </p>
+                <a target="blank" href="https://github.com/collinlanie12">
+                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                </a>
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/collin-lanier-a32762169/"
+                >
+                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
+
             <div className="col-3">
               <div className="soleman">
                 <div class="solemanBadge">
@@ -148,18 +168,24 @@ class HomePage extends Component {
                 </div>
                 <br />
               </div>
-              <p className="Info">
-                Born in Canada, but having lived in many countries, Soleman
-                Sayeed became infatuated with travel and determined to work
-                remotely. Attended the coding bootcamp in UNCC 2020 with the
-                goal to become a full stack web-developer.
-              </p>
-              <a href="https://github.com/solemansay">
-                <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/soleman-sayeed-998488177/">
-                <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
-              </a>
+
+              <div className="Info">
+                <p>
+                  Born in Canada, but having lived in many countries, Soleman
+                  Sayeed became infatuated with travel and determined to work
+                  remotely. Attended the coding bootcamp at UNCC 2020 with the
+                  goal to become a full stack web-developer.
+                </p>
+                <a target="blank" href="https://github.com/solemansay">
+                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                </a>
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/soleman-sayeed-998488177/"
+                >
+                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -198,7 +224,7 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description">
+                <p className="description">
                   <strong>
                     Having attended an online coding Bootcamp, the four creators
                     of this website realized the difficulties of studying at
@@ -228,11 +254,11 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description">
+                <p className="description">
                   <strong>
-                    The initial idea for the website had features that were
-                    too ambitious for the time allotted. However, we will be revisiting the project to
-                    complete our original vision.
+                    The initial idea for the website had features that were too
+                    ambitious for the time allotted. However, we will be
+                    revisiting the project to complete our original vision.
                   </strong>
                 </p>
               </figcaption>
@@ -258,12 +284,11 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description">
-                  {" "}
+                <p className="description">
                   <strong>
                     A strong point in our group was planning every step of the
                     the site, divvying up the responsibilities and workload as
-                    well as playing to individual teammates strengths.{" "}
+                    well as playing to individual teammates strengths.
                   </strong>
                 </p>
               </figcaption>
@@ -289,10 +314,11 @@ class HomePage extends Component {
                     <span class="icon-paper-clip"></span>
                   </a>
                 </p>
-                <p class="description">
+                <p className="description">
                   <strong>
                     Future hopes for the website include payment methods for
-                    tutors/teachers to earn money during their sessions, a chat feature, and a friend system.
+                    tutors/teachers to earn money during their sessions, a chat
+                    feature, and a friend system.
                   </strong>
                 </p>
               </figcaption>
@@ -301,8 +327,8 @@ class HomePage extends Component {
         </div>
 
         <Link className="nav-link" to="/login">
-          <Button size="lg" className="m-4" variant="info">
-            {" Login/Register"}
+          <Button size="lg" className="p-3 px-5 m-4" variant="info">
+            {"Login/Register"}
           </Button>
         </Link>
       </div>

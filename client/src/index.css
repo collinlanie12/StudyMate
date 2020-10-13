@@ -4,7 +4,7 @@ body {
   font: 400 15px/1.8 "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./assets/images/background.png");
+  background-color:#e0e1e1;
 }
 
 code {
@@ -36,5 +36,4 @@ code {
 
 .sidenav a:hover {
   color: #06721E;
-
 }
