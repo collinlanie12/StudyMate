@@ -20,14 +20,14 @@ function Attendance(props) {
 
     useEffect(() => {
         API.Posts.getSignups(auth.authToken, props.id)
-        .then(data => setSignups(data.data));
+            .then(data => setSignups(data.data));
     }, [props.id]);
 
     return (
         <Card className="AttendCard" style={{ width: '18rem', display: props.isShowing ? "inline-block" : "none" }}>
             <ListGroup variant="flush">
-            <ListGroup.Item className="t" style={title}><strong>Students attending this session</strong></ListGroup.Item>
-            {signups.map(username => <ListGroup.Item className="i" style={user}>{username}</ListGroup.Item>)}
+                <ListGroup.Item className="t" style={title}><strong>Students attending this session</strong></ListGroup.Item>
+                {signups.map(username => <ListGroup.Item className="i" style={user}>{username}</ListGroup.Item>)}
             </ListGroup>
         </Card>
     );

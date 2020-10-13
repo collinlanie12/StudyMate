@@ -36,72 +36,80 @@ function Main() {
     setIsScroll(false);
   };
 
+  //convert stored dates to DateTime format
   const convertPostTime = (date, time) => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-    const dateArr = date.split(" "); // [October, 15th]
-
-    const month = months.indexOf(dateArr[0]);
-    const day = parseInt(dateArr[1].replace("th", ""));
-    const dTime = time;
-    console.log(month, day, dTime);
+    const dateArr = date.split("-"); //YYYY-MM-DD
 
     let d = new Date();
 
-    d.setMonth(month);
-    d.setDate(day);
-    d.setHours(dTime, 0, 0);
+    d.setYear(parseInt(dateArr[0]));
+    d.setMonth(parseInt(dateArr[1]));
+    d.setDate(parseInt(dateArr[2]));
+    d.setHours(time, 0, 0);
 
-    console.log(d);
     return d;
   };
 
-  const postsAndAttendees = () => {
-    return API.Posts.getPostsWithAttendees()
-      .then(response => {
-        console.log(response.data);
-        const attendance = [];
-        response.data.forEach(e => {
-          const data = {
-            PostId: e.id,
-            UserId: e.UserId,
-            time: e.time,
-            date: e.date,
-            link: e.link,
-            attendees: e.attendees.map(attendee => attendee.id)
-          }
-          attendance.push(data);
-        });
-        return attendance;
-      });
+  //get all attendees of a post and refactor useability of data
+  const postsAndAttendees = async () => {
+    const response = await API.Posts.getPostsWithAttendees();
+    console.log(response.data);
+    const attendance = [];
+    response.data.forEach(e => {
+      const data = {
+        PostId: e.id,
+        UserId: e.UserId,
+        time: e.time,
+        date: e.date,
+        link: e.link,
+        title: e.title,
+        content: e.content,
+        attendees: e.attendees.map(attendee => attendee.id)
+      };
+      attendance.push(data);
+    });
+    return attendance;
   };
 
-  const isLocalUser = async (id) => {
-    console.log(auth)
-    return id === auth.user.id;
-  };
-
-  const checkPostTime = date => date.getTime() < Date.now();
-
-  const deliverLink = async (date, id, link) => {
-    console.log("I am here")
-    if (await isLocalUser(id) && checkPostTime(date)) {
-      console.log(link);
-    } else {
-      console.log("failed to deliver link");
+  //check a user id against local user
+  function isLocalUser() {
+    for (let i = 0; i < arguments.length; i++) {
+      console.log("is attending: " + arguments[i] + (arguments[i] === auth.user.id))
+      return (arguments[i] === auth.user.id);
     }
-  }
+  };
+
+  //check if date of post is after current time (used to serve links)
+  const checkPostTime = date => {
+    const postDate = new Date(date);
+    return postDate.getTime() <= Date.now();
+  };
+
+  //serve a link if time and user are true
+  const deliverData = (data) => {
+    const dataArr = [];
+    data.forEach(e => {
+      if (isLocalUser(e.UserId)) {
+        dataArr.push(e);
+      };
+      if (isLocalUser(...e.attendees)) {
+        dataArr.push(e);
+      }
+    });
+    return dataArr;
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     API.Posts.getAll(auth.authToken).then(async (response) => {
       setPosts(response.data);
+
+      //use aysnc function relying on auth.user below
+      if (!auth.user) return;
       const attendance = await postsAndAttendees();
-      console.log(attendance);
-      // const deliver = await deliverLink("Thu Oct 15 2020 03:00:00 GMT-0400 (Eastern Daylight Time)", 2, "www.gino.com");
-      // console.log(deliver);
+      deliverData(attendance);
     });
-  }, [postCon.submitted, isScroll]);
+  }, [postCon.submitted, isScroll, auth.user]);
 
   if (isScroll) {
     showBtn = { position: "fixed", bottom: "5%", left: "25%", display: "block" }
