@@ -31,7 +31,10 @@ function NotificationBell() {
 
         Promise.all(promises)
           .then(responses => {
-            setNotifications(responses.reduce((result, response) => result.concat(response.data[0].Notifications), []))
+            console.log(response.data[0]);
+            if (response.data[0].Notifications) {
+              setNotifications(responses.reduce((result, response) => result.concat(response.data[0].Notifications), []))
+            }
           });
 
       })
@@ -54,6 +57,11 @@ function NotificationBell() {
 
 
   data.length = 0;
+  data.push({
+    image: 'https://www.alliancerehabmed.com/wp-content/uploads/icon-avatar-default.png',
+    message: 'Welcome new User!',
+    receievedTime: "Now"
+  })
   notifications.forEach(notif => {
     data.push({
       image: notif.image,

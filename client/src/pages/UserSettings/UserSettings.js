@@ -34,24 +34,23 @@ function UserSettings() {
         API.Users.update(auth.authToken, username, parseInt(is_tutor), parseInt(timezone), user_bio, selectedSubjects)
             .then(response => response.data)
             .then(user => console.log(user))
-            .then(alert("Your info has been updated!"))
             .then(setRedirectToReferrer(true))
             .catch(err => console.log(err.message));
     };
 
     function handleCheckChange(e) {
-        
+
         if (e.target.checked) {
 
-        subArr = subArr.concat(...selectedSubjects, e.target.value);
+            subArr = subArr.concat(...selectedSubjects, e.target.value);
 
-        setSelectedSubjects(subArr);
+            setSelectedSubjects(subArr);
 
         } else {
 
-        let newSubArr = selectedSubjects.filter(subs => subs !== e.target.value);
+            let newSubArr = selectedSubjects.filter(subs => subs !== e.target.value);
 
-        setSelectedSubjects(newSubArr);
+            setSelectedSubjects(newSubArr);
         }
 
     }
@@ -60,80 +59,80 @@ function UserSettings() {
 
     if (redirectToReferrer) {
         return <Redirect to={from} />;
-      }
+    }
 
     return (
-    <div>
-    <Navigation/>
-        <div className='container'>
-            <div className='row'>
-                <div className='col-12'>
-                    <form onSubmit={handleFormSubmit}>
-                        <h1 className="mb-5">Hello {auth.user ? auth.user.email : "Loading..."}</h1>
-                        <label>Avatar:</label>
-                        <img src={DefaultProfile} className="img-fluid ml-5" alt="Avatar" style={{ width: "200px", height: "200px", borderRadius: "8px" }} />
-                        <div className='form-group mt-5'>
-                            <label>What's your name?</label>
-                            <input className="form-control" type="text" placeholder="Username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
-                        </div>
-                        <div className='form-group'>
-                            <label>Are you a Tutor?</label>
-                            <select className="form-control" name="is_tutor" onChange={e => setIs_tutor(e.target.value)} defaultValue="0">
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
-                            </select>
-                        </div>
-                        <div className='form-group'>
-                            <label>Timezone</label>
-                            <select className="form-control" name="timezone" onChange={e => setTimezone(e.target.value)} defaultValue="-5">
-                                <option value="-12">UTC -12 (Baker Island Time)</option>
-                                <option value="-11">UTC -11 (Samoa Standard Time)</option>
-                                <option value="-10">UTC -10 (Hawaiian Standard Time)</option>
-                                <option value="-9">UTC -9 (Alaska Standard Time)</option>
-                                <option value="-8">UTC -8 (US Pacific Standard Time)</option>
-                                <option value="-7">UTC -7 (US Mountain Standard Time)</option>
-                                <option value="-6">UTC -6 (US Central Standard Time)</option>
-                                <option value="-5">UTC -5 (US Eastern Standard Time)</option>
-                                <option value="-4">UTC -4 (Atlantic Standard Time)</option>
-                                <option value="-3">UTC -3 (Argentina Standard Time)</option>
-                                <option value="-2">UTC -2 (South Georgia Standard Time)</option>
-                                <option value="-1">UTC -1 (Azores Standard Time)</option>
-                                <option value="0">UTC ±0 (Greenwich Standard Time)</option>
-                                <option value="1">UTC +1 (Central European Standard Time)</option>
-                                <option value="2">UTC +2 (Central Africa Standard Time)</option>
-                                <option value="3">UTC +3 (Moscow Standard Time)</option>
-                                <option value="4">UTC +4 (Gulf Standard Time)</option>
-                                <option value="5">UTC +5 (Pakistan Standard Time)</option>
-                                <option value="6">UTC +6 (Bangladesh Standard Time)</option>
-                                <option value="7">UTC +7 (Christmas Island Standard Time)</option>
-                                <option value="8">UTC +8 (China Standard Time)</option>
-                                <option value="9">UTC +9 (Japan Standard Time)</option>
-                                <option value="10">UTC +10 (Australian Eastern Standard Time)</option>
-                                <option value="11">UTC +11 (Bougainville Standard Time)</option>
-                                <option value="12">UTC +12 (New Zealand Standard Time)</option>
-                            </select>
-                        </div>
-                        <label>What subjects are you interested in?</label>
-                        <div className="form-check text-left" onChange={handleCheckChange}>
-                            {subjects.map(subject => (<>
-                                <br />
-                                <input key={"Check-" + subject.id} className="form-check-input" type="checkbox" value={subject.id} />
-                                <label htmlFor={subject.subject} key={subject.id} className="form-check-label">
-                                    {subject.subject}
-                                </label>
-                            </>
-                            ))}
-                        </div>
-                        <div className="form-group">
-                            <label>Tell us about yourself!</label>
-                            <textarea className="form-control" rows="3" placeholder="Bio" name="user_bio" value={user_bio} onChange={e => setUser_bio(e.target.value)}></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-info">Submit</button>
-                    </form>
+        <div>
+            <Navigation />
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-12'>
+                        <form onSubmit={handleFormSubmit}>
+                            <h1 className="mb-5">Hello {auth.user ? auth.user.email : "Loading..."}</h1>
+                            <label>Avatar:</label>
+                            <img src={DefaultProfile} className="img-fluid ml-5" alt="Avatar" style={{ width: "200px", height: "200px", borderRadius: "8px" }} />
+                            <div className='form-group mt-5'>
+                                <label>What's your name?</label>
+                                <input className="form-control" type="text" placeholder="Username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+                            </div>
+                            <div className='form-group'>
+                                <label>Are you a Tutor?</label>
+                                <select className="form-control" name="is_tutor" onChange={e => setIs_tutor(e.target.value)} defaultValue="0">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div className='form-group'>
+                                <label>Timezone</label>
+                                <select className="form-control" name="timezone" onChange={e => setTimezone(e.target.value)} defaultValue="-5">
+                                    <option value="-12">UTC -12 (Baker Island Time)</option>
+                                    <option value="-11">UTC -11 (Samoa Standard Time)</option>
+                                    <option value="-10">UTC -10 (Hawaiian Standard Time)</option>
+                                    <option value="-9">UTC -9 (Alaska Standard Time)</option>
+                                    <option value="-8">UTC -8 (US Pacific Standard Time)</option>
+                                    <option value="-7">UTC -7 (US Mountain Standard Time)</option>
+                                    <option value="-6">UTC -6 (US Central Standard Time)</option>
+                                    <option value="-5">UTC -5 (US Eastern Standard Time)</option>
+                                    <option value="-4">UTC -4 (Atlantic Standard Time)</option>
+                                    <option value="-3">UTC -3 (Argentina Standard Time)</option>
+                                    <option value="-2">UTC -2 (South Georgia Standard Time)</option>
+                                    <option value="-1">UTC -1 (Azores Standard Time)</option>
+                                    <option value="0">UTC ±0 (Greenwich Standard Time)</option>
+                                    <option value="1">UTC +1 (Central European Standard Time)</option>
+                                    <option value="2">UTC +2 (Central Africa Standard Time)</option>
+                                    <option value="3">UTC +3 (Moscow Standard Time)</option>
+                                    <option value="4">UTC +4 (Gulf Standard Time)</option>
+                                    <option value="5">UTC +5 (Pakistan Standard Time)</option>
+                                    <option value="6">UTC +6 (Bangladesh Standard Time)</option>
+                                    <option value="7">UTC +7 (Christmas Island Standard Time)</option>
+                                    <option value="8">UTC +8 (China Standard Time)</option>
+                                    <option value="9">UTC +9 (Japan Standard Time)</option>
+                                    <option value="10">UTC +10 (Australian Eastern Standard Time)</option>
+                                    <option value="11">UTC +11 (Bougainville Standard Time)</option>
+                                    <option value="12">UTC +12 (New Zealand Standard Time)</option>
+                                </select>
+                            </div>
+                            <label>What subjects are you interested in?</label>
+                            <div className="form-check text-left" onChange={handleCheckChange}>
+                                {subjects.map(subject => (<>
+                                    <br />
+                                    <input key={"Check-" + subject.id} className="form-check-input" type="checkbox" value={subject.id} />
+                                    <label htmlFor={subject.subject} key={subject.id} className="form-check-label">
+                                        {subject.subject}
+                                    </label>
+                                </>
+                                ))}
+                            </div>
+                            <div className="form-group">
+                                <label>Tell us about yourself!</label>
+                                <textarea className="form-control" rows="3" placeholder="Bio" name="user_bio" value={user_bio} onChange={e => setUser_bio(e.target.value)}></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-info">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     );
 }
 

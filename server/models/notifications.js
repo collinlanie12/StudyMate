@@ -16,6 +16,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
   Notifications.associate = models => {
+    Notifications.belongsToMany(models.User, {
+      through: "user_notifications"
+    });
     Notifications.belongsTo(models.Subject);
   };
 
