@@ -96,7 +96,7 @@ class HomePage extends Component {
                   from the first vision to the final product.
                 </p>
                 <a target="blank" href="https://github.com/JordanT111596">
-                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-github mr-3 fa-2x icon" aria-hidden="true"></i>
                 </a>
                 <a
                   target="blank"
@@ -109,8 +109,8 @@ class HomePage extends Component {
 
             <div className="col-3">
               <div className="gino">
-                <div class="ginoBadge">
-                  <div class="text">Gino</div> <br />
+                <div className="ginoBadge">
+                  <div className="text">Gino</div> <br />
                 </div>
                 <br />
               </div>
@@ -123,21 +123,21 @@ class HomePage extends Component {
                   design.
                 </p>
                 <a target="blank" href="https://github.com/toomuchbob">
-                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-github mr-3 fa-2x icon" aria-hidden="true"></i>
                 </a>
                 <a
                   target="blank"
                   href="https://www.linkedin.com/in/gino-zaccardelli-06887418/"
                 >
-                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
 
             <div className="col-3">
               <div className="collin">
-                <div class="collinBadge">
-                  <div class="text">Collin</div> <br />
+                <div className="collinBadge">
+                  <div className="text">Collin</div> <br />
                 </div>
                 <br />
               </div>
@@ -150,21 +150,21 @@ class HomePage extends Component {
                   how to program by attending the UNCC Coding Bootcamp.
                 </p>
                 <a target="blank" href="https://github.com/collinlanie12">
-                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-github mr-3 fa-2x icon" aria-hidden="true"></i>
                 </a>
                 <a
                   target="blank"
                   href="https://www.linkedin.com/in/collin-lanier-a32762169/"
                 >
-                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
 
             <div className="col-3">
               <div className="soleman">
-                <div class="solemanBadge">
-                  <div class="text">Soleman</div> <br />
+                <div className="solemanBadge">
+                  <div className="text">Soleman</div> <br />
                 </div>
                 <br />
               </div>
@@ -177,13 +177,13 @@ class HomePage extends Component {
                   goal to become a full stack web-developer.
                 </p>
                 <a target="blank" href="https://github.com/solemansay">
-                  <i class="fa fa-github fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-github mr-3 fa-2x icon" aria-hidden="true"></i>
                 </a>
                 <a
                   target="blank"
                   href="https://www.linkedin.com/in/soleman-sayeed-998488177/"
                 >
-                  <i class="fa fa-linkedin fa-2x icon" aria-hidden="true"></i>
+                  <i className="fa fa-linkedin fa-2x icon mb-4" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -203,8 +203,8 @@ class HomePage extends Component {
             </p>
           </div>
 
-          <div class="grid">
-            <figure class="effect-zoe">
+          <div className="grid">
+            <figure className="effect-zoe">
               <img
                 src="https://www.princetonreview.com/cms-content/how-to-make-the-most-out-of-mcat-study-group.jpg"
                 alt="Niche img"
@@ -213,15 +213,15 @@ class HomePage extends Component {
                 <h2>
                   The <span>Niche</span>
                 </h2>
-                <p class="icon-links">
+                <p className="icon-links">
                   <a>
-                    <span class="icon-heart"></span>
+                    <span className="icon-heart"></span>
                   </a>
                   <a>
-                    <span class="icon-eye"></span>
+                    <span className="icon-eye"></span>
                   </a>
                   <a>
-                    <span class="icon-paper-clip"></span>
+                    <span className="icon-paper-clip"></span>
                   </a>
                 </p>
                 <p className="description">
@@ -234,7 +234,7 @@ class HomePage extends Component {
               </figcaption>
             </figure>
 
-            <figure class="effect-zoe">
+            <figure className="effect-zoe">
               <img
                 src="https://www.floridacareercollege.edu/wp-content/uploads/sites/4/2020/02/Study-Tips-to-Become-a-Better-Test-Taker-Florida-Career-College.jpg"
                 alt="img25"
@@ -243,15 +243,15 @@ class HomePage extends Component {
                 <h2>
                   Brain <span>Child</span>
                 </h2>
-                <p class="icon-links">
+                <p className="icon-links">
                   <a>
-                    <span class="icon-heart"></span>
+                    <span className="icon-heart"></span>
                   </a>
                   <a>
-                    <span class="icon-eye"></span>
+                    <span className="icon-eye"></span>
                   </a>
                   <a>
-                    <span class="icon-paper-clip"></span>
+                    <span className="icon-paper-clip"></span>
                   </a>
                 </p>
                 <p className="description">
@@ -264,7 +264,7 @@ class HomePage extends Component {
               </figcaption>
             </figure>
 
-            <figure class="effect-zoe">
+            <figure className="effect-zoe">
               <img
                 src="https://i.ytimg.com/vi/4IVlE5wnBy0/maxresdefault.jpg"
                 alt="img26"
@@ -273,15 +273,15 @@ class HomePage extends Component {
                 <h2>
                   Project <span>Plan</span>
                 </h2>
-                <p class="icon-links">
+                <p className="icon-links">
                   <a>
-                    <span class="icon-heart"></span>
+                    <span className="icon-heart"></span>
                   </a>
                   <a>
-                    <span class="icon-eye"></span>
+                    <span className="icon-eye"></span>
                   </a>
                   <a>
-                    <span class="icon-paper-clip"></span>
+                    <span className="icon-paper-clip"></span>
                   </a>
                 </p>
                 <p className="description">
@@ -294,7 +294,7 @@ class HomePage extends Component {
               </figcaption>
             </figure>
 
-            <figure class="effect-zoe">
+            <figure className="effect-zoe">
               <img
                 src="https://previews.123rf.com/images/faithie/faithie1602/faithie160200441/51599055-future-loading-person-thinking-about-the-future-with-progress-bar-in-a-thought-bubble.jpg"
                 alt="img25"
@@ -303,15 +303,15 @@ class HomePage extends Component {
                 <h2>
                   Future <span>Hopes</span>
                 </h2>
-                <p class="icon-links">
+                <p className="icon-links">
                   <a>
-                    <span class="icon-heart"></span>
+                    <span className="icon-heart"></span>
                   </a>
                   <a>
-                    <span class="icon-eye"></span>
+                    <span className="icon-eye"></span>
                   </a>
                   <a>
-                    <span class="icon-paper-clip"></span>
+                    <span className="icon-paper-clip"></span>
                   </a>
                 </p>
                 <p className="description">
