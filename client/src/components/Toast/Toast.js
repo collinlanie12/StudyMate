@@ -2,9 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Toast, Button, ListGroup } from "react-bootstrap";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
+import ScrollAnimation from "react-animate-on-scroll";
+
 
 import "./Toast.css";
-
 
 function Bubble(props) {
   let time;
@@ -15,21 +16,20 @@ function Bubble(props) {
   const [subjectName, setSubjectName] = useState("");
   const toggleShowB = () => {
     setShowB(!showB);
-    API.Posts.userRemovePost(auth.authToken)
-      .then(result => {
-        console.log(result.data);
-      })
-  }
+    API.Posts.userRemovePost(auth.authToken).then((result) => {
+      console.log(result.data);
+    });
+  };
 
   function handleSignUp(e) {
     e.preventDefault();
 
     API.Posts.createSignup(auth.authToken, auth.user.id, props.id)
-    .then(response => response.data)
-    .catch(err => console.log(err.message));
+      .then(response => response.data)
+      .catch((err) => console.log(err.message));
 
     alert("You have been signed up for this session!");
-  };
+  }
 
   switch (props.time) {
     case 0:
@@ -106,23 +106,29 @@ function Bubble(props) {
       break;
   }
 
+  const showBubble = (id) => {
+    if (parseInt(id) === 0) return true;
+    //console.log(`${id} - ${props.SubjectId}`)
+    return (parseInt(id) === parseInt(props.SubjectId))
+  }
+
   useEffect(() => {
     API.Users.findUser(props.userName)
       .then(res => { setUserName(res.data.username) });
     API.Subjects.findSubject(props.subjectName)
       .then(res => { setSubjectName(res.data.subject) });
-      console.log(auth.user.id);
+    //console.log(auth.user.id);
   }, []);
-
 
   return (
     <>
+    <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
       <Toast
         className={`textBubble mt-3 ${props.userType}`}
         onClose={toggleShowB}
         show={showB}
         animation={false}
-        style={{ minWidth: "335px" }}
+        style={{ minWidth: "335px", display: showBubble(props.display) ? "block" : "none" }}
       >
         <Toast.Header>
           <img
@@ -145,10 +151,11 @@ function Bubble(props) {
             {props.content}
           </div>
           <Button className="attendBtn" variant="info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
-          <Button className="joinBtn" variant="info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+          <Button className="joinBtn" variant="info" onClick={handleSignUp}>Join This Session</Button>
 
         </Toast.Body>
       </Toast>
+      </ScrollAnimation>
     </>
   );
 }

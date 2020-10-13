@@ -13,7 +13,7 @@
 }
 
 .bgimg-1 {
-  background-image: url("../../assets/images/splash.jpg");
+  background-image: url("../../assets/images/splash2.jpg");
   min-height: 650px;
 }
 
@@ -63,8 +63,6 @@
 .studyMateBio {
   text-align: center;
   border-top: solid 6px #393476;
-  background-image: url("../../assets/images/background.png");
-  /* background-color: #ccbeac !important; */
   color: rgb(0, 0, 0) !important;
   font-size: large;
 }
@@ -92,7 +90,7 @@
 .theIdea {
   background-color: #605c91;
   height: 850px;
-  border-top: solid 6px #06721e;
+  border-top: solid 6px #138496;
 }
 
 .ideaTitle {
@@ -109,8 +107,6 @@ font-size: 17px;
 }
 
 
-
-
 .soleman{
   margin: auto;
   width: 50%;
@@ -119,7 +115,8 @@ font-size: 17px;
 }
 
 .Info{
-  margin-top: 15px;
+  width: 350px;
+  font-size: 18px ;
 }
 
 .gino{
@@ -341,4 +338,9 @@ figure.effect-zoe:hover p.icon-links a:nth-child(2) {
 figure.effect-zoe:hover p.icon-links a:first-child {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
+}
+
+.icon{
+  color:rgb(73, 72, 72);
+  margin: 5px;
 }

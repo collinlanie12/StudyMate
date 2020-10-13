@@ -32,6 +32,24 @@ module.exports = {
       PostId: 6,
       UserId: 4
     },
+    {
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      PostId: 6,
+      UserId: 2
+    },
+    {
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      PostId: 1,
+      UserId: 2
+    },
+    {
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      PostId: 3,
+      UserId: 2
+    },
     ])
   },
 
