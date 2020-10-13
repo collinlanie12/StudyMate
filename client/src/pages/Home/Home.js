@@ -259,7 +259,6 @@ class HomePage extends Component {
                   </a>
                 </p>
                 <p class="description">
-                  {" "}
                   <strong>
                     A strong point in our group was planning every step of the
                     the site, divvying up the responsibilities and workload as
