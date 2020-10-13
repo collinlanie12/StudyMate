@@ -19,8 +19,10 @@ function Attendance(props) {
     const [signups, setSignups] = useState([]);
 
     useEffect(() => {
-        API.Posts.getSignups(auth.authToken, props.id)
-            .then(data => setSignups(data.data));
+        if (props.id) {
+            API.Posts.getSignups(auth.authToken, props.id)
+                .then(data => setSignups(data.data));
+        }
     }, [props.id]);
 
     return (

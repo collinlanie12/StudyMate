@@ -24,6 +24,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      SubjectId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Subjects",
+          key: "id"
+        }
       }
     });
   },

@@ -124,15 +124,22 @@ export default {
   },
 
   Notifications: {
-    getAll: function (authToken) {
-      return axios.get('/api/notifications/all', {
+    getSubjects: function (authToken) {
+      return axios.get('/api/notifications/user-subjects', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
+    },
+    getAll: function (authToken, SubjectId) {
+      return axios.get('/api/notifications/user-notifs/' + SubjectId, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
       });
     },
-    create: function (authToken, message, atTime) {
-      return axios.post('/api/notifications/create', { message, atTime }, {
+    create: function (authToken, message, atTime, SubjectId) {
+      return axios.post('/api/notifications/create', { message, atTime, SubjectId }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
