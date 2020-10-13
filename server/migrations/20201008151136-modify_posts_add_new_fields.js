@@ -13,14 +13,6 @@ module.exports = {
       ),
       queryInterface.addColumn(
         'Posts',
-        'date',
-        {
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
-      ),
-      queryInterface.addColumn(
-        'Posts',
         'link',
         {
           type: Sequelize.STRING,
