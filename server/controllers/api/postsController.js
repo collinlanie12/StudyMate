@@ -15,7 +15,7 @@ postsController.post('/create', (req, res) => {
                 secret: process.env.PUSHER_APP_SECRET,
                 cluster: process.env.PUSHER_APP_CLUSTER
             });
-            pusher.trigger('notifications', 'post_added', post, req.headers['x-socket-id']);
+            pusher.trigger('notifications', 'post_added', post);
             res.json(post);
         })
         .catch(err => res.json(err));

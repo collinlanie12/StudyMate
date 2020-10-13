@@ -13,6 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             through: "user_subject"
         });
         Subject.hasOne(models.Post);
+        Subject.hasMany(models.Notifications);
     };
     return Subject;
 };
