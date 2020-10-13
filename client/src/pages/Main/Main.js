@@ -3,7 +3,7 @@ import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
 import PostButton from "../../components/PostButton/PostButton";
 import PostContext from "../../contexts/PostContext";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SubjectsFilter from "../../components/SubjectsFilter/SubjectsFilter";
 import Navigation from "../../components/Navigation/Navigation";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
@@ -16,6 +16,7 @@ function Main() {
   const auth = useContext(AuthContext);
   const [showAttendance, setShowAttendance] = useState(false);
   const [attendanceId, setAttendanceId] = useState();
+  const [subjectFilter, setSubjectFilter] = useState(0);
 
   const postCon = useContext(PostContext);
 
@@ -53,7 +54,7 @@ function Main() {
   //get all attendees of a post and refactor useability of data
   const postsAndAttendees = async () => {
     const response = await API.Posts.getPostsWithAttendees();
-    console.log(response.data);
+    //console.log(response.data);
     const attendance = [];
     response.data.forEach(e => {
       const data = {
@@ -74,7 +75,6 @@ function Main() {
   //check a user id against local user
   function isLocalUser() {
     for (let i = 0; i < arguments.length; i++) {
-      console.log("is attending: " + arguments[i] + (arguments[i] === auth.user.id))
       return (arguments[i] === auth.user.id);
     }
   };
@@ -122,6 +122,10 @@ function Main() {
     setAttendanceId(id);
   };
 
+  const onSubjectFilter = (id) => {
+    setSubjectFilter(id);
+  };
+
   return (
     <div>
       <Navigation />
@@ -137,9 +141,9 @@ function Main() {
 
           <div className="text-center col-6 middleRow">
             <h1 className="mt-4 mb-4 title">Suggested For You <i className="fa fa-book" aria-hidden="true"></i></h1>
-            <SearchBar />
+            <SubjectsFilter onSubjectChange={onSubjectFilter} />
             {posts.map(post => (
-              <Bubble userType="student" key={post.id} id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
+              <Bubble display={subjectFilter} SubjectId={post.SubjectId} userType="student" key={post.id} id={post.id} subjectName={post.SubjectId} content={post.content} userName={post.UserId} time={post.time}
                 title={post.title} date={post.date} isShowingAttendance={showAttendance} onAttendanceClick={handleAttendanceClick} />
             ))}
           </div>

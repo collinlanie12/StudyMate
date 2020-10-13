@@ -102,6 +102,7 @@ export default {
     getAll: function () {
       return axios.get("api/subjects/");
     },
+    
     findSubject: function (SubjectId) {
       return axios.get(`/api/subjects/${SubjectId}`);
     }

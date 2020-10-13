@@ -25,8 +25,8 @@ function Bubble(props) {
     e.preventDefault();
 
     API.Posts.createSignup(auth.authToken, auth.user.id, props.id)
-    .then(response => response.data)
-    .catch(err => console.log(err.message));
+      .then(response => response.data)
+      .catch(err => console.log(err.message));
 
     alert("You have been signed up for this session!");
   };
@@ -106,14 +106,19 @@ function Bubble(props) {
       break;
   }
 
+  const showBubble = (id) => {
+    if (parseInt(id) === 0) return true;
+    //console.log(`${id} - ${props.SubjectId}`)
+    return (parseInt(id) === parseInt(props.SubjectId))
+  }
+
   useEffect(() => {
     API.Users.findUser(props.userName)
       .then(res => { setUserName(res.data.username) });
     API.Subjects.findSubject(props.subjectName)
       .then(res => { setSubjectName(res.data.subject) });
-      console.log(auth.user.id);
+    //console.log(auth.user.id);
   }, []);
-
 
   return (
     <>
@@ -122,7 +127,7 @@ function Bubble(props) {
         onClose={toggleShowB}
         show={showB}
         animation={false}
-        style={{ minWidth: "335px" }}
+        style={{ minWidth: "335px", display: showBubble(props.display) ? "block" : "none" }}
       >
         <Toast.Header>
           <img
