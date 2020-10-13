@@ -111,7 +111,6 @@ function Bubble(props) {
       .then(res => { setUserName(res.data.username) });
     API.Subjects.findSubject(props.subjectName)
       .then(res => { setSubjectName(res.data.subject) });
-      console.log(auth.user.id);
   }, []);
 
 

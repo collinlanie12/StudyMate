@@ -1,8 +1,5 @@
 span.crud {
-    background-image: url();
-    background-position: left center;
-    background-repeat: no-repeat;
-    height: 85px;
+    height: 175px;
     overflow: hidden;
     padding: 0 0 0 40px;
     width: 0;
@@ -34,5 +31,9 @@ span.crud {
     top: 10;
     right: 0;
     padding-top: 20px;
+  }
+
+  strong {
+    font-family: "Montserrat", sans-serif;
   }
   

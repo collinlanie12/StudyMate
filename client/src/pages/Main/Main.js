@@ -23,6 +23,7 @@ function Main() {
 
   const [posts, setPosts] = useState([]);
   const [isScroll, setIsScroll] = useState(false);
+  const [calAttendance, setCalAttendance] = useState([]);
 
 
   const handleScroll = () => {
@@ -107,7 +108,8 @@ function Main() {
       //use aysnc function relying on auth.user below
       if (!auth.user) return;
       const attendance = await postsAndAttendees();
-      deliverData(attendance);
+      const newAttendance = deliverData(attendance);
+      setCalAttendance(newAttendance);
     });
   }, [postCon.submitted, isScroll, auth.user]);
 
@@ -146,7 +148,9 @@ function Main() {
 
           <div className="col-3 rightSide">
             <h1 className="text-center title">Calendar <i className="fa fa-calendar" aria-hidden="true"></i></h1>
-            <CalTab />
+            {calAttendance.map(cals => (
+              <CalTab key={cals.PostId} id={cals.PostId} title={cals.title} content={cals.content} date={cals.date} time={cals.time} link={cals.link} />
+            ))}
           </div>
         </div>
         <div className="row">
