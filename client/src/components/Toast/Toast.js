@@ -2,9 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Toast, Button, ListGroup } from "react-bootstrap";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
+import ScrollAnimation from "react-animate-on-scroll";
+
 
 import "./Toast.css";
-
 
 function Bubble(props) {
   let time;
@@ -15,21 +16,20 @@ function Bubble(props) {
   const [subjectName, setSubjectName] = useState("");
   const toggleShowB = () => {
     setShowB(!showB);
-    API.Posts.userRemovePost(auth.authToken)
-      .then(result => {
-        console.log(result.data);
-      })
-  }
+    API.Posts.userRemovePost(auth.authToken).then((result) => {
+      console.log(result.data);
+    });
+  };
 
   function handleSignUp(e) {
     e.preventDefault();
 
     API.Posts.createSignup(auth.authToken, auth.user.id, props.id)
       .then(response => response.data)
-      .catch(err => console.log(err.message));
+      .catch((err) => console.log(err.message));
 
     alert("You have been signed up for this session!");
-  };
+  }
 
   switch (props.time) {
     case 0:
