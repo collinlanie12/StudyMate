@@ -107,13 +107,10 @@ function Bubble(props) {
   }
 
   useEffect(() => {
-    API.Users.findUser(props.userName).then((res) => {
-      setUserName(res.data.username);
-    });
-    API.Subjects.findSubject(props.subjectName).then((res) => {
-      setSubjectName(res.data.subject);
-    });
-    console.log(auth.user.id);
+    API.Users.findUser(props.userName)
+      .then(res => { setUserName(res.data.username) });
+    API.Subjects.findSubject(props.subjectName)
+      .then(res => { setSubjectName(res.data.subject) });
   }, []);
 
   return (
