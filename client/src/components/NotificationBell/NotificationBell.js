@@ -5,14 +5,7 @@ import Pusher from "pusher-js";
 // import axios from "axios";
 import AuthContext from "../../contexts/AuthContext";
 import API from "../../lib/API";
-const data = [
-  {
-    image: "https://www.alliancerehabmed.com/wp-content/uploads/icon-avatar-default.png",
-    message: 'You missed my math lecture you clown.',
-    receivedTime: '12h ago'
-
-  }
-]
+const data = [];
 function NotificationBell() {
   const auth = useContext(AuthContext);
 
