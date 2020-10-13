@@ -90,9 +90,14 @@ export default {
     },
 
     deleteSignup: function (authToken, UserId, id) {
-      return axios.delete('/api/posts/signup/remove', { UserId, id }, {
+      console.log("AXIOS LOG" + authToken, UserId, id);
+      return axios.delete('/api/posts/signup/remove', {
         headers: {
           'Authorization': `Bearer ${authToken}`
+        },
+        data: {
+          
+          UserId, id 
         }
       });
     }
@@ -102,6 +107,7 @@ export default {
     getAll: function () {
       return axios.get("api/subjects/");
     },
+    
     findSubject: function (SubjectId) {
       return axios.get(`/api/subjects/${SubjectId}`);
     }

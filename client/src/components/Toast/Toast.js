@@ -25,7 +25,7 @@ function Bubble(props) {
     e.preventDefault();
 
     API.Posts.createSignup(auth.authToken, auth.user.id, props.id)
-      .then((response) => response.data)
+      .then(response => response.data)
       .catch((err) => console.log(err.message));
 
     alert("You have been signed up for this session!");
@@ -106,63 +106,54 @@ function Bubble(props) {
       break;
   }
 
+  const showBubble = (id) => {
+    if (parseInt(id) === 0) return true;
+    //console.log(`${id} - ${props.SubjectId}`)
+    return (parseInt(id) === parseInt(props.SubjectId))
+  }
+
   useEffect(() => {
-    API.Users.findUser(props.userName).then((res) => {
-      setUserName(res.data.username);
-    });
-    API.Subjects.findSubject(props.subjectName).then((res) => {
-      setSubjectName(res.data.subject);
-    });
-    console.log(auth.user.id);
+    API.Users.findUser(props.userName)
+      .then(res => { setUserName(res.data.username) });
+    API.Subjects.findSubject(props.subjectName)
+      .then(res => { setSubjectName(res.data.subject) });
+    //console.log(auth.user.id);
   }, []);
 
   return (
     <>
-      <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
-        <Toast
-          className={`textBubble mt-3 ${props.userType}`}
-          onClose={toggleShowB}
-          show={showB}
-          animation={false}
-          style={{ minWidth: "335px" }}
-        >
-          <Toast.Header>
-            <img
-              src="https://www.alliancerehabmed.com/wp-content/uploads/icon-avatar-default.png"
-              height="40px"
-              width="40px"
-              className="rounded mr-2"
-              alt="profile img"
-            />
-            <strong className="mr-auto">{userName}</strong>
-            <strong className="mr-auto">{subjectName}</strong>
-            <small>{time}</small>
-          </Toast.Header>
-          <Toast.Body>
-            <div>
-              Date: {props.date}
-              <br></br>
-              Topic: {props.title}
-              <br></br>
-              {props.content}
-            </div>
-            <Button
-              className="attendBtn"
-              variant="info"
-              onClick={() => props.onAttendanceClick(props.id)}
-            >
-              {props.isShowingAttendance
-                ? "Hide Attendance"
-                : "Show Attendance"}
-            </Button>
-            <Button className="joinBtn" variant="info" onClick={handleSignUp}>
-              {props.isShowingAttendance
-                ? "Leave Session"
-                : "Join This Session"}
-            </Button>
-          </Toast.Body>
-        </Toast>
-      </ScrollAnimation>
+      <Toast
+        className={`textBubble mt-3 ${props.userType}`}
+        onClose={toggleShowB}
+        show={showB}
+        animation={false}
+        style={{ minWidth: "335px", display: showBubble(props.display) ? "block" : "none" }}
+      >
+        <Toast.Header>
+          <img
+            src="https://www.alliancerehabmed.com/wp-content/uploads/icon-avatar-default.png"
+            height="40px"
+            width="40px"
+            className="rounded mr-2"
+            alt="profile img"
+          />
+          <strong className="mr-auto">{userName}</strong>
+          <strong className="mr-auto">{subjectName}</strong>
+          <small>{time}</small>
+        </Toast.Header>
+        <Toast.Body>
+          <div>
+            Date: {props.date}
+            <br></br>
+            Topic: {props.title}
+            <br></br>
+            {props.content}
+          </div>
+          <Button className="attendBtn" variant="info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
+          <Button className="joinBtn" variant="info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+
+        </Toast.Body>
+      </Toast>
     </>
   );
 }
