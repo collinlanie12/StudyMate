@@ -122,6 +122,7 @@ function Bubble(props) {
 
   return (
     <>
+    <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
       <Toast
         className={`textBubble mt-3 ${props.userType}`}
         onClose={toggleShowB}
@@ -150,10 +151,11 @@ function Bubble(props) {
             {props.content}
           </div>
           <Button className="attendBtn" variant="info" onClick={() => props.onAttendanceClick(props.id)}>{props.isShowingAttendance ? "Hide Attendance" : "Show Attendance"}</Button>
-          <Button className="joinBtn" variant="info" onClick={handleSignUp}>{props.isShowingAttendance ? "Leave Session" : "Join This Session"}</Button>
+          <Button className="joinBtn" variant="info" onClick={handleSignUp}>Join This Session</Button>
 
         </Toast.Body>
       </Toast>
+      </ScrollAnimation>
     </>
   );
 }
