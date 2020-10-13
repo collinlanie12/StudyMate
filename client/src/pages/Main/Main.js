@@ -2,15 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import Bubble from "../../components/Toast/Toast";
 import CalTab from "../../components/CalTab/CalTab";
 import PostButton from "../../components/PostButton/PostButton";
+import Attendance from "../../components/Attendance/Attendance";
 import PostContext from "../../contexts/PostContext";
 import SubjectsFilter from "../../components/SubjectsFilter/SubjectsFilter";
 import Navigation from "../../components/Navigation/Navigation";
 import API from "../../lib/API";
 import AuthContext from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap"
-import Attendance from "../../components/Attendance/Attendance";
-
 import "./Main.css"
+
+
 
 function Main() {
   const auth = useContext(AuthContext);
@@ -136,7 +137,6 @@ function Main() {
         <div className="row">
           <div className="col-3">
             <div className="leftSide">
-              {/* <SideNav /> */}
               <Attendance isShowing={showAttendance} id={attendanceId} />
             </div>
           </div>

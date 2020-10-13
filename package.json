@@ -24,7 +24,9 @@
     "animate.css": "^4.1.1",
     "node-sass": "^4.14.1",
     "react-animate-on-scroll": "^2.1.5",
+    "react-animations": "^1.0.0",
     "react-notifications-menu": "^1.0.1",
+    "styled-components": "^5.2.0",
     "yarn": "^1.22.10"
   }
 }

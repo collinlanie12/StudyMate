@@ -10,7 +10,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 1,
       UserId: 1,
-      date: "October 15th",
+      date: "2020-10-08",
       link: "https://www.zoom.com"
     },
     {
@@ -21,7 +21,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 1,
       UserId: 2,
-      date: "October 17th",
+      date: "2020-10-13",
       link: "https://www.zoom.com"
     },
     {
@@ -32,7 +32,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 8,
       UserId: 3,
-      date: "October 8th",
+      date: "2020-10-13",
       link: "https://www.zoom.com"
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 6,
       UserId: 4,
-      date: "October 5th",
+      date: "2020-10-14",
       link: "https://www.zoom.com"
     },
     {
@@ -54,7 +54,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 4,
       UserId: 2,
-      date: "October 20th",
+      date: "2020-10-14",
       link: "https://www.zoom.com"
     },
     {
@@ -65,7 +65,7 @@ module.exports = {
       updatedAt: new Date(),
       SubjectId: 3,
       UserId: 3,
-      date: "October 10th",
+      date: "2020-10-17",
       link: "https://www.zoom.com"
     }]);
   },
