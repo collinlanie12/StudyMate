@@ -23,9 +23,10 @@ postsController.post('/create', (req, res) => {
 
 //get all posts
 postsController.get("/all", (req, res) => {
-    db.Post.findAll({}).then(result => {
-        res.json(result);
-    });
+    db.Post.findAll({})
+        .then(result => {
+            res.json(result);
+        });
 });
 
 //get post(s) by subjectId
@@ -40,6 +41,15 @@ postsController.get("/subject/:subjectId", (req, res) => {
     });
 });
 
+postsController.get("/signup/attendees", (req, res) => {
+    db.Post.findAll({
+        include: 'attendees'
+    })
+        .then(result => {
+            res.json(result);
+        })
+});
+
 // get UserIds associated with PostId
 postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
     db.Post.findByPk(req.params.id)
@@ -47,7 +57,7 @@ postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
             if (!result) {
                 return res.sendStatus(404);
             }
-            return result.getUsers()
+            return result.getAttendees();
         })
         .then(data => {
             let usernameArr = [];

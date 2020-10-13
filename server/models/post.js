@@ -27,6 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         Post.belongsTo(models.Subject);
         Post.belongsTo(models.User);
         Post.belongsToMany(models.User, {
+            as: 'attendees',
             through: "user_post"
         })
     };
