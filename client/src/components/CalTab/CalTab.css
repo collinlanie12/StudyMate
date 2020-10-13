@@ -5,10 +5,10 @@ span.crud {
     width: 0;
     border-radius: 8px 0px 0px 8px;
     background: linear-gradient(to right,  #138496 20.5px, #524c8f 82.5px, #524c8f 82.5px, #524c8f 82.5px);
-    position: absolute;
     color:rgb(255, 255, 255);
     border: 2.5px #18135c solid;
     border-right: none;
+    right: 0;
   }
   
   span.crud:hover {
@@ -28,12 +28,16 @@ span.crud {
     width: 23%;
     position: fixed;
     z-index: 1;
-    top: 10;
+    /* top: 10; */
     right: 0;
     padding-top: 20px;
   }
 
-  strong {
+  .calTitle {
     font-family: "Montserrat", sans-serif;
+  }
+
+  .calRow {
+    float: right;
   }
   

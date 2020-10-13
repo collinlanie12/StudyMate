@@ -75,7 +75,6 @@ function Main() {
   //check a user id against local user
   function isLocalUser() {
     for (let i = 0; i < arguments.length; i++) {
-      console.log("is attending: " + arguments[i] + (arguments[i] === auth.user.id))
       return (arguments[i] === auth.user.id);
     }
   };

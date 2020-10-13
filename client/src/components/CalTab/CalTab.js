@@ -86,22 +86,34 @@ function CalTab(props) {
 
   const handleClick = () => {
     API.Posts.deleteSignup(auth.authToken, auth.user.id, props.id)
-    .then(response => console.log("User removed from attendees"))
-    .catch(err => console.log(err));
+      .then(response => console.log("User removed from attendees"))
+      .catch(err => console.log(err));
   };
 
   return (
-    <span
-    id="calTab"
-      className="crud transitioning mt-4"
-      style={{ top: "98px", right: "0px" }}
-    >
-      <strong>{props.title}</strong>
-      <p className="m-0">{props.content}</p>
-      <p className="m-0">Starting on {props.date} at {time}</p>
-      <p className="m-0">Join here: <a href={props.link}>{props.link}</a></p>
-      <Button variant="danger" onClick={handleClick} className="mt-3 mb-0">Leave This Session</Button>
-    </span>
+    <>
+    <div className="row calRow">
+      <span
+        id="calTab"
+        className="crud transitioning mt-4"
+        style={{ top: "98px", right: "0px" }}
+      >
+        <strong className="calTitle">{props.title}</strong>
+        <p className="m-0">{props.content}</p>
+        <p className="m-0">Starting on {props.date} at {time}</p>
+        <p className="m-0">Join here: <a href={props.link}>{props.link}</a></p>
+        <Button variant="danger" onClick={handleClick} className="mt-3 mb-0">Leave This Session</Button>
+      </span>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    </>
   );
 }
 

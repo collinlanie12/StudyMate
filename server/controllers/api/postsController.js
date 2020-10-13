@@ -78,31 +78,41 @@ postsController.get("/signup/get/:id", JWTVerifier, (req, res) => {
 
 //new user signup to post
 postsController.post("/signup/add", (req, res) => {
+    console.log(req.body);
     db.Post.findOne({
         where: { id: req.body.id }
     })
         .then(result => {
+            console.log(result);
             return Promise.all([
-                result.setUsers(req.body.UserId)
+                result.addAttendee(req.body.UserId)
             ])
         })
         .then(result => {
             res.json(result);
+        })
+        .catch(err => {
+            console.log(err);
         });
 });
 
 //remove user from signup to post
 postsController.delete("/signup/remove", JWTVerifier, (req, res) => {
+    console.log(req.body);
     db.Post.findOne({
         where: { id: req.body.id }
     })
         .then(result => {
+            console.log(result);
             return Promise.all([
-                result.removeUsers(req.body.UserId)
+                result.removeAttendee(req.body.UserId)
             ])
         })
         .then(result => {
             res.json(result);
+        })
+        .catch(err => {
+            console.log(err);
         });
 });
 
