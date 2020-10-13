@@ -63,8 +63,6 @@
 .studyMateBio {
   text-align: center;
   border-top: solid 6px #393476;
-  background-image: url("../../assets/images/background.png");
-  /* background-color: #ccbeac !important; */
   color: rgb(0, 0, 0) !important;
   font-size: large;
 }
@@ -118,6 +116,7 @@ font-size: 17px;
 
 .Info{
   width: 350px;
+  font-size: 18px ;
 }
 
 .gino{
